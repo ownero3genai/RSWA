@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Members — RSWA | Real Estate Professionals Network</title>
+  <meta name="description" content="Browse RSWA's verified network of 350+ real estate professionals including channel partners, builders, and property consultants across Mumbai, Virar, Palghar, and Boisar." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">R</div>
+        <div class="logo-text">
+          <span class="logo-name">RSWA</span>
+          <span class="logo-tagline">Realtors Social Welfare Association</span>
+        </div>
+      </a>
+      <nav class="main-nav" role="navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <div class="nav-dropdown">
+          <a href="members.html" class="nav-link">Members <i class="fa fa-chevron-down fa-xs"></i></a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="members.html">All Members</a></li>
+            <li><a class="dropdown-item" href="branch-members.html">Branch Members</a></li>
+            <li><a class="dropdown-item" href="member-profile.html">Member Profile</a></li>
+          </ul>
+        </div>
+        <div class="nav-dropdown">
+          <a href="location.html" class="nav-link">Branches <i class="fa fa-chevron-down fa-xs"></i></a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="location.html">Mumbai HQ</a></li>
+            <li><a class="dropdown-item" href="location.html">Virar Branch</a></li>
+            <li><a class="dropdown-item" href="location.html">Palghar Branch</a></li>
+            <li><a class="dropdown-item" href="location.html">Boisar Branch</a></li>
+          </ul>
+        </div>
+        <a href="events.html" class="nav-link">Events</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn-accent btn-sm header-cta">Join RSWA</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" role="navigation">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="members.html" class="mobile-nav-link active" data-dropdown="mob-members">Members <i class="fa fa-chevron-down fa-xs"></i></a>
+    <div class="mobile-dropdown-menu" id="mob-members">
+      <a href="members.html" class="mobile-dropdown-item">All Members</a>
+      <a href="branch-members.html" class="mobile-dropdown-item">Branch Members</a>
+    </div>
+    <a href="location.html" class="mobile-nav-link" data-dropdown="mob-branches">Branches <i class="fa fa-chevron-down fa-xs"></i></a>
+    <div class="mobile-dropdown-menu" id="mob-branches">
+      <a href="location.html" class="mobile-dropdown-item">Mumbai HQ</a>
+      <a href="location.html" class="mobile-dropdown-item">Virar Branch</a>
+      <a href="location.html" class="mobile-dropdown-item">Palghar Branch</a>
+      <a href="location.html" class="mobile-dropdown-item">Boisar Branch</a>
+    </div>
+    <a href="events.html" class="mobile-nav-link">Events</a>
+    <a href="contact.html" class="mobile-nav-link">Contact</a>
+    <div style="padding:20px 0;"><a href="contact.html" class="btn btn-accent" style="width:100%;justify-content:center;display:flex;">Join RSWA</a></div>
+  </nav>
+
+  <main>
+
+    <!-- ===================== PAGE HERO ===================== -->
+    <section class="page-hero">
+      <div class="container page-hero-content">
+        <span class="page-hero-tag">Our Network</span>
+        <h1 class="page-hero-title">Our Members</h1>
+        <p class="page-hero-subtitle">350+ verified real estate professionals across the Western corridor. Find, connect, and collaborate.</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep"><i class="fa fa-chevron-right fa-xs"></i></span>
+          <span class="breadcrumb-current">Members</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ===================== MEMBERS LISTING ===================== -->
+    <section class="section section-light">
+      <div class="container">
+
+        <!-- Search & Filter Bar -->
+        <div class="search-filter-bar reveal">
+          <div class="search-row">
+            <div class="search-input-wrap">
+              <i class="fa fa-search"></i>
+              <input
+                type="search"
+                class="search-input"
+                placeholder="Search by name, role, or location..."
+                aria-label="Search members"
+              />
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+              <span style="font-size:0.83rem;color:var(--text-muted);white-space:nowrap;" class="members-count">Showing 12 members</span>
+            </div>
+          </div>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Branches</button>
+            <button class="filter-btn" data-filter="mumbai">Mumbai</button>
+            <button class="filter-btn" data-filter="virar">Virar</button>
+            <button class="filter-btn" data-filter="palghar">Palghar</button>
+            <button class="filter-btn" data-filter="boisar">Boisar</button>
+          </div>
+        </div>
+
+        <!-- No Results Message -->
+        <div class="no-results" style="display:none;text-align:center;padding:60px 24px;">
+          <i class="fa fa-search" style="font-size:2.5rem;color:var(--border);display:block;margin-bottom:16px;"></i>
+          <h3 style="font-family:var(--font-heading);color:var(--text-muted);font-size:1.1rem;">No members found</h3>
+          <p style="color:var(--text-muted);font-size:0.9rem;margin-top:8px;">Try adjusting your search or filter criteria.</p>
+        </div>
+
+        <!-- Members Grid -->
+        <div class="members-grid stagger-children">
+
+          <div class="member-card reveal" data-location="mumbai" data-role="channel partner">
+            <div class="member-card-img-wrap img-zoom"><div class="img-skeleton" style="height:200px;">
+              <img src="https://picsum.photos/seed/rswa-person1/400/400" alt="Rajesh Sharma" class="member-card-img" loading="lazy" /></div>
+            </div>
+            <div class="member-card-body">
+              <h3 class="member-name">Rajesh Sharma</h3>
+              <p class="member-role">President</p>
+              <div class="member-info"><span class="badge badge-primary">Channel Partner</span><span class="badge badge-muted">Mumbai</span></div>
+            </div>
+            <div class="member-card-footer">
+              <span class="member-location"><i class="fa fa-map-pin"></i> Mumbai HQ</span>
+              <div class="member-social">
+                <a href="member-profile.html" class="member-social-btn" title="View Profile"><i class="fa fa-user"></i></a>
+                <a href="#" class="member-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-card reveal" data-location="virar" data-role="property consultant">
+            <div class="member-card-img-wrap img-zoom"><div class="img-skeleton" style="height:200px;">
+              <img src="https://picsum.photos/seed/rswa-person2/400/400" alt="Priya Patel" class="member-card-img" loading="lazy" /></div>
+            </div>
+            <div class="member-card-body">
+              <h3 class="member-name">Priya Patel</h3>
+              <p class="member-role">Vice President</p>
+              <div class="member-info"><span class="badge badge-primary">Property Consultant</span><span class="badge badge-muted">Virar</span></div>
+            </div>
+            <div class="member-card-footer">
+              <span class="member-location"><i class="fa fa-map-pin"></i> Virar Branch</span>
+              <div class="member-social">
+                <a href="member-profile.html" class="member-social-btn" title="View Profile"><i class="fa fa-user"></i></a>
+                <a href="#" class="member-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-card reveal" data-location="palghar" data-role="builder">
+            <div class="member-card-img-wrap img-zoom"><div class="img-skeleton" style="height:200px;">
+              <img src="https://picsum.photos/seed/rswa-person3/400/400" alt="Amit Desai" class="member-card-img" loading="lazy" /></div>
+            </div>
+            <div class="member-card-body">
+              <h3 class="member-name">Amit Desai</h3>
+              <p class="member-role">General Secretary</p>
+              <div class="member-info"><span class="badge badge-primary">Builder</span><span class="badge badge-muted">Palghar</span></div>
+            </div>
+            <div class="member-card-footer">
+              <span class="member-location"><i class="fa fa-map-pin"></i> Palghar Branch</span>
+              <div class="member-social">
+                <a href="member-profile.html" class="member-social-btn" title="View Profile"><i class="fa fa-user"></i></a>
+                <a href="#" class="member-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-card reveal" data-location="boisar" data-role="channel partner">
+            <div class="member-card-img-wrap img-zoom"><div class="img-skeleton" style="height:200px;">
+              <img src="https://picsum.photos/seed/rswa-person4/400/400" alt="Sneha Mehta" class="member-card-img" loading="lazy" /></div>
+            </div>
+            <div class="member-card-body">
+              <h3 class="member-name">Sneha Mehta</h3>
+              <p class="member-role">Treasurer</p>
+              <div class="member-info"><span class="badge badge-primary">Channel Partner</span><span class="badge badge-muted">Boisar</span></div>
+            </div>
+            <div class="member-card-footer">
+              <span class="member-location"><i class="fa fa-map-pin"></i> Boisar Branch</span>
+              <div class="member-social">
+                <a href="member-profile.html" class="member-social-btn" title="View Profile"><i class="fa fa-user"></i></a>
+                <a href="#" class="member-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-card reveal" data-location="mumbai" data-role="real estate advisor">
+            <div class="member-card-img-wrap img-zoom"><div class="img-skeleton" style="height:200px;">
+              <img src="https://picsum.photos/seed/rswa-person8/400/400" alt="Vikram Joshi" class="member-card-img" loading="lazy" /></div>
+            </div>
+            <div class="member-card-body">
+              <h3 class="member-name">Vikram Joshi</h3>
+              <p class="member-role">Joint Secretary</p>
+              <div class="member-info"><span class="badge badge-primary">Real Estate Advisor</span><span class="badge badge-muted">Mumbai</span></div>
+            </div>
+            <div class="member-card-footer">
+              <span class="member-location"><i class="fa fa-map-pin"></i> Mumbai HQ</span>
+              <div class="member-social">
+                <a href="member-profile.html" class="member-social-btn" title="View Profile"><i class="fa fa-user"></i></a>
+                <a href="#" class="member-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-card reveal" data-location="virar" data-role="property consultant">
+            <div class="member-card-img-wrap img-zoom"><div class="img-skeleton" style="height:200px;">
+              <img src="https://picsum.photos/seed/rswa-person9/400/400" alt="Kavita Nair" class="member-card-img" loading="lazy" /></div>
+            </div>
+            <div class="member-card-body">
+              <h3 class="member-name">Kavita Nair</h3>
+              <p class="member-role">Executive Member</p>
+              <div class="member-info"><span class="badge badge-primary">Property Consultant</span><span class="badge badge-muted">Virar</span></div>
+            </div>
+            <div class="member-card-footer">
+              <span class="member-location"><i class="fa fa-map-pin"></i> Virar Branch</span>
+              <div class="member-social">
+                <a href="member-profile.html" class="member-social-btn" title="View Profile"><i class="fa fa-user"></i></a>
+                <a href="#" class="member-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-card reveal" data-location="palghar" data-role="builder">
+            <div class="member-card-img-wrap img-zoom"><div class="img-skeleton" style="height:200px;">
+              <img src="https://picsum.photos/seed/rswa-person10/400/400" alt="Suresh Rao" class="member-card-img" loading="lazy" /></div>
+            </div>
+            <div class="member-card-body">
+              <h3 class="member-name">Suresh Rao</h3>
+              <p class="member-role">Executive Member</p>
+              <div class="member-info"><span class="badge badge-primary">Builder</span><span class="badge badge-muted">Palghar</span></div>
+            </div>
+            <div class="member-card-footer">
+              <span class="member-location"><i class="fa fa-map-pin"></i> Palghar Branch</span>
+              <div class="member-social">
+                <a href="member-profile.html" class="member-social-btn" title="View Profile"><i class="fa fa-user"></i></a>
+                <a href="#" class="member-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-card reveal" data-location="boisar" data-role="channel partner">
+            <div class="member-card-img-wrap img-zoom"><div class="img-skeleton" style="height:200px;">
+              <img src="https://picsum.photos/seed/rswa-person11/400/400" alt="Anita Singh" class="member-card-img" loading="lazy" /></div>
+            </div>
+            <div class="member-card-body">
+              <h3 class="member-name">Anita Singh</h3>
+              <p class="member-role">Executive Member</p>
+              <div class="member-info"><span class="badge badge-primary">Channel Partner</span><span class="badge badge-muted">Boisar</span></div>
+            </div>
+            <div class="member-card-footer">
+              <span class="member-location"><i class="fa fa-map-pin"></i> Boisar Branch</span>
+              <div class="member-social">
+                <a href="member-profile.html" class="member-social-btn" title="View Profile"><i class="fa fa-user"></i></a>
+                <a href="#" class="member-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-card reveal" data-location="mumbai" data-role="channel partner">
+            <div class="member-card-img-wrap img-zoom"><div class="img-skeleton" style="height:200px;">
+              <img src="https://picsum.photos/seed/rswa-person5/400/400" alt="Manoj Gupta" class="member-card-img" loading="lazy" /></div>
+            </div>
+            <div class="member-card-body">
+              <h3 class="member-name">Manoj Gupta</h3>
+              <p class="member-role">Member</p>
+              <div class="member-info"><span class="badge badge-primary">Channel Partner</span><span class="badge badge-muted">Mumbai</span></div>
+            </div>
+            <div class="member-card-footer">
+              <span class="member-location"><i class="fa fa-map-pin"></i> Mumbai HQ</span>
+              <div class="member-social">
+                <a href="member-profile.html" class="member-social-btn" title="View Profile"><i class="fa fa-user"></i></a>
+                <a href="#" class="member-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-card reveal" data-location="virar" data-role="real estate advisor">
+            <div class="member-card-img-wrap img-zoom"><div class="img-skeleton" style="height:200px;">
+              <img src="https://picsum.photos/seed/rswa-person6/400/400" alt="Pooja Iyer" class="member-card-img" loading="lazy" /></div>
+            </div>
+            <div class="member-card-body">
+              <h3 class="member-name">Pooja Iyer</h3>
+              <p class="member-role">Member</p>
+              <div class="member-info"><span class="badge badge-primary">Real Estate Advisor</span><span class="badge badge-muted">Virar</span></div>
+            </div>
+            <div class="member-card-footer">
+              <span class="member-location"><i class="fa fa-map-pin"></i> Virar Branch</span>
+              <div class="member-social">
+                <a href="member-profile.html" class="member-social-btn" title="View Profile"><i class="fa fa-user"></i></a>
+                <a href="#" class="member-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-card reveal" data-location="palghar" data-role="builder">
+            <div class="member-card-img-wrap img-zoom"><div class="img-skeleton" style="height:200px;">
+              <img src="https://picsum.photos/seed/rswa-person12/400/400" alt="Deepak Shah" class="member-card-img" loading="lazy" /></div>
+            </div>
+            <div class="member-card-body">
+              <h3 class="member-name">Deepak Shah</h3>
+              <p class="member-role">Member</p>
+              <div class="member-info"><span class="badge badge-primary">Builder</span><span class="badge badge-muted">Palghar</span></div>
+            </div>
+            <div class="member-card-footer">
+              <span class="member-location"><i class="fa fa-map-pin"></i> Palghar Branch</span>
+              <div class="member-social">
+                <a href="member-profile.html" class="member-social-btn" title="View Profile"><i class="fa fa-user"></i></a>
+                <a href="#" class="member-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-card reveal" data-location="boisar" data-role="property consultant">
+            <div class="member-card-img-wrap img-zoom"><div class="img-skeleton" style="height:200px;">
+              <img src="https://picsum.photos/seed/rswa-person7/400/400" alt="Rekha Verma" class="member-card-img" loading="lazy" /></div>
+            </div>
+            <div class="member-card-body">
+              <h3 class="member-name">Rekha Verma</h3>
+              <p class="member-role">Member</p>
+              <div class="member-info"><span class="badge badge-primary">Property Consultant</span><span class="badge badge-muted">Boisar</span></div>
+            </div>
+            <div class="member-card-footer">
+              <span class="member-location"><i class="fa fa-map-pin"></i> Boisar Branch</span>
+              <div class="member-social">
+                <a href="member-profile.html" class="member-social-btn" title="View Profile"><i class="fa fa-user"></i></a>
+                <a href="#" class="member-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="page-btn" aria-label="Previous page" disabled><i class="fa fa-chevron-left fa-xs"></i></button>
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <span style="padding:0 4px;color:var(--text-muted);">&hellip;</span>
+          <button class="page-btn">18</button>
+          <button class="page-btn" aria-label="Next page"><i class="fa fa-chevron-right fa-xs"></i></button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== CTA ===================== -->
+    <section class="cta-section section">
+      <div class="container">
+        <div class="cta-content reveal">
+          <span class="section-tag" style="color:rgba(255,255,255,0.85);">Are You a Realtor?</span>
+          <h2 class="cta-title">Join Our Growing Network</h2>
+          <p class="cta-text">Become a verified RSWA member and get listed in our professional directory. Be discovered by clients, developers, and fellow professionals.</p>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn btn-white btn-lg"><i class="fa fa-user-plus"></i> Apply for Membership</a>
+            <a href="about.html" class="btn btn-outline-white btn-lg">Learn the Benefits</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="logo footer-logo">
+          <div class="logo-icon">R</div>
+          <div class="logo-text"><span class="logo-name">RSWA</span><span class="logo-tagline">Realtors Social Welfare Association</span></div>
+        </a>
+        <p class="footer-brand-desc">Empowering real estate professionals across the Western corridor since 2010.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html"><i class="fa fa-angle-right"></i> Home</a></li>
+          <li><a href="about.html"><i class="fa fa-angle-right"></i> About RSWA</a></li>
+          <li><a href="members.html"><i class="fa fa-angle-right"></i> Our Members</a></li>
+          <li><a href="events.html"><i class="fa fa-angle-right"></i> Events</a></li>
+          <li><a href="contact.html"><i class="fa fa-angle-right"></i> Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav">
+        <h4>Branches</h4>
+        <ul>
+          <li><a href="location.html"><i class="fa fa-angle-right"></i> Mumbai HQ</a></li>
+          <li><a href="location.html"><i class="fa fa-angle-right"></i> Virar Branch</a></li>
+          <li><a href="location.html"><i class="fa fa-angle-right"></i> Palghar Branch</a></li>
+          <li><a href="location.html"><i class="fa fa-angle-right"></i> Boisar Branch</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav">
+        <h4>Contact</h4>
+        <div class="footer-contact-item"><i class="fa fa-map-pin"></i><span>301 Sahyog House, Andheri West, Mumbai &ndash; 400058</span></div>
+        <div class="footer-contact-item"><i class="fa fa-phone"></i><span>+91 98765 43210</span></div>
+        <div class="footer-contact-item"><i class="fa fa-envelope"></i><span>info@rswa.org.in</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2024 RSWA &mdash; Realtors Social Welfare Association. All rights reserved.</p>
+      <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+    </div>
+  </footer>
+
+  <button id="backToTop" aria-label="Back to top"><i class="fa fa-arrow-up"></i></button>
+  <script src="js/main.js"></script>
+</body>
+</html>

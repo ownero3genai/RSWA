@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rajesh Sharma — Member Profile | RSWA</title>
+  <meta name="description" content="Professional profile of Rajesh Sharma, RSWA President and Channel Partner based in Mumbai. View specializations, contact details, and professional background." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">R</div>
+        <div class="logo-text">
+          <span class="logo-name">RSWA</span>
+          <span class="logo-tagline">Realtors Social Welfare Association</span>
+        </div>
+      </a>
+      <nav class="main-nav" role="navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <div class="nav-dropdown">
+          <a href="members.html" class="nav-link">Members <i class="fa fa-chevron-down fa-xs"></i></a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="members.html">All Members</a></li>
+            <li><a class="dropdown-item" href="branch-members.html">Branch Members</a></li>
+            <li><a class="dropdown-item" href="member-profile.html">Member Profile</a></li>
+          </ul>
+        </div>
+        <div class="nav-dropdown">
+          <a href="location.html" class="nav-link">Branches <i class="fa fa-chevron-down fa-xs"></i></a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="location.html">Mumbai HQ</a></li>
+            <li><a class="dropdown-item" href="location.html">Virar Branch</a></li>
+            <li><a class="dropdown-item" href="location.html">Palghar Branch</a></li>
+            <li><a class="dropdown-item" href="location.html">Boisar Branch</a></li>
+          </ul>
+        </div>
+        <a href="events.html" class="nav-link">Events</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn-accent btn-sm header-cta">Join RSWA</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" role="navigation">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="members.html" class="mobile-nav-link" data-dropdown="mob-members">Members <i class="fa fa-chevron-down fa-xs"></i></a>
+    <div class="mobile-dropdown-menu" id="mob-members">
+      <a href="members.html" class="mobile-dropdown-item">All Members</a>
+      <a href="branch-members.html" class="mobile-dropdown-item">Branch Members</a>
+    </div>
+    <a href="location.html" class="mobile-nav-link" data-dropdown="mob-branches">Branches <i class="fa fa-chevron-down fa-xs"></i></a>
+    <div class="mobile-dropdown-menu" id="mob-branches">
+      <a href="location.html" class="mobile-dropdown-item">Mumbai HQ</a>
+      <a href="location.html" class="mobile-dropdown-item">Virar Branch</a>
+      <a href="location.html" class="mobile-dropdown-item">Palghar Branch</a>
+      <a href="location.html" class="mobile-dropdown-item">Boisar Branch</a>
+    </div>
+    <a href="events.html" class="mobile-nav-link">Events</a>
+    <a href="contact.html" class="mobile-nav-link">Contact</a>
+    <div style="padding:20px 0;"><a href="contact.html" class="btn btn-accent" style="width:100%;justify-content:center;display:flex;">Join RSWA</a></div>
+  </nav>
+
+  <main>
+
+    <!-- ===================== PROFILE HERO ===================== -->
+    <section class="profile-hero">
+      <div class="profile-hero-grid">
+        <!-- Left: Image -->
+        <div class="profile-hero-img img-skeleton">
+          <img
+            src="https://picsum.photos/seed/rswa-person1/800/900"
+            alt="Rajesh Sharma"
+            loading="eager"
+            style="width:100%;height:100%;object-fit:cover;"
+          />
+        </div>
+
+        <!-- Right: Info -->
+        <div class="profile-hero-body">
+          <nav class="breadcrumb" style="margin-bottom:24px;justify-content:flex-start;">
+            <a href="index.html" style="color:rgba(255,255,255,0.6);">Home</a>
+            <span class="breadcrumb-sep"><i class="fa fa-chevron-right fa-xs"></i></span>
+            <a href="members.html" style="color:rgba(255,255,255,0.6);">Members</a>
+            <span class="breadcrumb-sep"><i class="fa fa-chevron-right fa-xs"></i></span>
+            <span class="breadcrumb-current">Rajesh Sharma</span>
+          </nav>
+
+          <div class="profile-role">President &mdash; RSWA</div>
+          <h1 class="profile-name">Rajesh Sharma</h1>
+
+          <div class="profile-meta">
+            <div class="profile-meta-item">
+              <i class="fa fa-map-pin"></i>
+              <span>Mumbai, Maharashtra</span>
+            </div>
+            <div class="profile-meta-item">
+              <i class="fa fa-building"></i>
+              <span>Channel Partner</span>
+            </div>
+            <div class="profile-meta-item">
+              <i class="fa fa-calendar"></i>
+              <span>Member since Jan 2010</span>
+            </div>
+            <div class="profile-meta-item">
+              <i class="fa fa-star" style="color:var(--accent);"></i>
+              <span>Founding Member</span>
+            </div>
+          </div>
+
+          <div class="profile-id-badge">
+            <i class="fa fa-id-card"></i>
+            Member ID: RSWA-MUM-001
+          </div>
+
+          <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;">
+            <a href="tel:+919876543210" class="btn btn-accent btn-sm">
+              <i class="fa fa-phone"></i> Call
+            </a>
+            <a href="mailto:rajesh.sharma@example.com" class="btn btn-outline-white btn-sm">
+              <i class="fa fa-envelope"></i> Email
+            </a>
+            <a href="#" class="btn btn-outline-white btn-sm">
+              <i class="fab fa-linkedin-in"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROFILE BODY ===================== -->
+    <section class="section section-light">
+      <div class="container">
+        <div class="grid-2" style="gap:48px;">
+
+          <!-- Left: About -->
+          <div>
+            <div class="reveal">
+              <span class="section-tag">Professional Background</span>
+              <h2 class="section-title" style="font-size:1.5rem;">About Rajesh Sharma</h2>
+              <div class="accent-line"></div>
+              <p style="color:var(--text-muted);line-height:1.85;font-size:0.95rem;margin-bottom:16px;">
+                Rajesh Sharma is one of the founding members and the current President of RSWA. With over 22 years of experience in the Mumbai real estate market, Rajesh has built an exceptional reputation as a trusted channel partner specializing in residential and commercial properties across the Western suburbs.
+              </p>
+              <p style="color:var(--text-muted);line-height:1.85;font-size:0.95rem;margin-bottom:16px;">
+                His journey in real estate began in 2002 when he joined his family's property business in Andheri. Recognizing the need for a formal professional network, Rajesh was instrumental in founding RSWA in 2010 along with 17 other industry professionals.
+              </p>
+              <p style="color:var(--text-muted);line-height:1.85;font-size:0.95rem;margin-bottom:28px;">
+                Under his presidency, RSWA has grown from 18 founding members to over 350 active professionals, established 4 branch offices, and facilitated more than &#8377;500 Crores in property transactions.
+              </p>
+            </div>
+
+            <!-- Specializations -->
+            <div class="reveal">
+              <h3 style="font-family:var(--font-heading);font-size:1.05rem;font-weight:600;color:var(--dark);margin-bottom:14px;">Property Specializations</h3>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                <span class="badge badge-primary">Residential Properties</span>
+                <span class="badge badge-primary">Commercial Properties</span>
+                <span class="badge badge-primary">New Project Launches</span>
+                <span class="badge badge-primary">Redevelopment Projects</span>
+                <span class="badge badge-accent">RERA Advisory</span>
+                <span class="badge badge-muted">Property Valuation</span>
+                <span class="badge badge-muted">Rental Management</span>
+                <span class="badge badge-muted">Investor Relations</span>
+              </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="reveal" style="margin-top:36px;">
+              <h3 style="font-family:var(--font-heading);font-size:1.05rem;font-weight:600;color:var(--dark);margin-bottom:16px;">Recent Activity</h3>
+              <div style="display:flex;flex-direction:column;gap:14px;">
+                <div style="display:flex;align-items:flex-start;gap:12px;padding:16px;background:var(--white);border-radius:10px;border:1px solid var(--border);">
+                  <div style="width:36px;height:36px;border-radius:50%;background:var(--primary-pale);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:0.82rem;flex-shrink:0;"><i class="fa fa-microphone"></i></div>
+                  <div>
+                    <p style="font-family:var(--font-heading);font-size:0.88rem;font-weight:600;color:var(--dark);margin-bottom:2px;">Speaker — Annual Real Estate Summit 2024</p>
+                    <p style="font-size:0.8rem;color:var(--text-muted);">March 15, 2024 &bull; Hotel Sahara Star, Mumbai</p>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:12px;padding:16px;background:var(--white);border-radius:10px;border:1px solid var(--border);">
+                  <div style="width:36px;height:36px;border-radius:50%;background:var(--primary-pale);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:0.82rem;flex-shrink:0;"><i class="fa fa-users"></i></div>
+                  <div>
+                    <p style="font-family:var(--font-heading);font-size:0.88rem;font-weight:600;color:var(--dark);margin-bottom:2px;">Chaired — RERA Compliance Workshop</p>
+                    <p style="font-size:0.8rem;color:var(--text-muted);">February 10, 2024 &bull; RSWA Office, Andheri</p>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:12px;padding:16px;background:var(--white);border-radius:10px;border:1px solid var(--border);">
+                  <div style="width:36px;height:36px;border-radius:50%;background:rgba(232,130,28,0.1);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.82rem;flex-shrink:0;"><i class="fa fa-award"></i></div>
+                  <div>
+                    <p style="font-family:var(--font-heading);font-size:0.88rem;font-weight:600;color:var(--dark);margin-bottom:2px;">Re-elected as President</p>
+                    <p style="font-size:0.8rem;color:var(--text-muted);">January 2024 &bull; Annual General Body Meeting</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Contact Card -->
+          <div>
+            <div class="contact-form reveal" style="position:sticky;top:96px;">
+              <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:600;color:var(--dark);margin-bottom:20px;">Contact Information</h3>
+
+              <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:28px;">
+                <div style="display:flex;align-items:flex-start;gap:14px;">
+                  <div style="width:40px;height:40px;border-radius:8px;background:var(--primary-pale);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:0.88rem;flex-shrink:0;"><i class="fa fa-phone"></i></div>
+                  <div>
+                    <p style="font-size:0.78rem;color:var(--text-muted);margin-bottom:2px;">Mobile</p>
+                    <a href="tel:+919876543210" style="font-family:var(--font-heading);font-size:0.95rem;font-weight:600;color:var(--dark);">+91 98765 43210</a>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:14px;">
+                  <div style="width:40px;height:40px;border-radius:8px;background:var(--primary-pale);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:0.88rem;flex-shrink:0;"><i class="fa fa-envelope"></i></div>
+                  <div>
+                    <p style="font-size:0.78rem;color:var(--text-muted);margin-bottom:2px;">Email</p>
+                    <a href="mailto:rajesh.sharma@rswa.org.in" style="font-family:var(--font-heading);font-size:0.95rem;font-weight:600;color:var(--dark);">rajesh.sharma@rswa.org.in</a>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:14px;">
+                  <div style="width:40px;height:40px;border-radius:8px;background:var(--primary-pale);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:0.88rem;flex-shrink:0;"><i class="fa fa-map-pin"></i></div>
+                  <div>
+                    <p style="font-size:0.78rem;color:var(--text-muted);margin-bottom:2px;">Office Address</p>
+                    <p style="font-family:var(--font-heading);font-size:0.92rem;font-weight:600;color:var(--dark);line-height:1.5;">301 Sahyog House, Andheri West,<br />Mumbai &ndash; 400058</p>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:14px;">
+                  <div style="width:40px;height:40px;border-radius:8px;background:var(--primary-pale);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:0.88rem;flex-shrink:0;"><i class="fa fa-clock"></i></div>
+                  <div>
+                    <p style="font-size:0.78rem;color:var(--text-muted);margin-bottom:2px;">Availability</p>
+                    <p style="font-family:var(--font-heading);font-size:0.92rem;font-weight:600;color:var(--dark);">Mon &ndash; Sat: 10 AM &ndash; 7 PM</p>
+                  </div>
+                </div>
+              </div>
+
+              <div style="border-top:1px solid var(--border);padding-top:20px;margin-bottom:20px;">
+                <h4 style="font-family:var(--font-heading);font-size:0.88rem;font-weight:600;color:var(--dark);margin-bottom:12px;">Social Profiles</h4>
+                <div style="display:flex;gap:8px;">
+                  <a href="#" class="social-btn" style="border-color:var(--border);color:var(--text-muted);" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="social-btn" style="border-color:var(--border);color:var(--text-muted);" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social-btn" style="border-color:var(--border);color:var(--text-muted);" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="social-btn" style="border-color:var(--border);color:var(--text-muted);" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+
+              <div style="background:var(--primary-pale);border-radius:10px;padding:20px;display:flex;align-items:center;gap:12px;">
+                <div style="width:40px;height:40px;border-radius:50%;background:var(--primary);color:white;display:flex;align-items:center;justify-content:center;font-size:0.88rem;flex-shrink:0;"><i class="fa fa-check"></i></div>
+                <div>
+                  <p style="font-family:var(--font-heading);font-size:0.88rem;font-weight:600;color:var(--primary);">Verified RSWA Member</p>
+                  <p style="font-size:0.78rem;color:var(--text-muted);">ID: RSWA-MUM-001 &bull; Since 2010</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RELATED MEMBERS ===================== -->
+    <section class="section" style="background:var(--white);">
+      <div class="container">
+        <div class="section-header centered reveal">
+          <span class="section-tag">More Professionals</span>
+          <h2 class="section-title">Other Members from Mumbai</h2>
+        </div>
+        <div class="members-grid stagger-children" style="margin-top:40px;">
+          <div class="member-card reveal">
+            <div class="member-card-img-wrap img-zoom"><div class="img-skeleton" style="height:200px;">
+              <img src="https://picsum.photos/seed/rswa-person8/400/400" alt="Vikram Joshi" class="member-card-img" loading="lazy" /></div>
+            </div>
+            <div class="member-card-body">
+              <h3 class="member-name">Vikram Joshi</h3>
+              <p class="member-role">Joint Secretary</p>
+              <div class="member-info"><span class="badge badge-primary">Real Estate Advisor</span><span class="badge badge-muted">Mumbai</span></div>
+            </div>
+            <div class="member-card-footer">
+              <span class="member-location"><i class="fa fa-map-pin"></i> Mumbai HQ</span>
+              <div class="member-social"><a href="member-profile.html" class="member-social-btn" title="View Profile"><i class="fa fa-user"></i></a></div>
+            </div>
+          </div>
+          <div class="member-card reveal">
+            <div class="member-card-img-wrap img-zoom"><div class="img-skeleton" style="height:200px;">
+              <img src="https://picsum.photos/seed/rswa-person5/400/400" alt="Manoj Gupta" class="member-card-img" loading="lazy" /></div>
+            </div>
+            <div class="member-card-body">
+              <h3 class="member-name">Manoj Gupta</h3>
+              <p class="member-role">Member</p>
+              <div class="member-info"><span class="badge badge-primary">Channel Partner</span><span class="badge badge-muted">Mumbai</span></div>
+            </div>
+            <div class="member-card-footer">
+              <span class="member-location"><i class="fa fa-map-pin"></i> Mumbai HQ</span>
+              <div class="member-social"><a href="member-profile.html" class="member-social-btn" title="View Profile"><i class="fa fa-user"></i></a></div>
+            </div>
+          </div>
+          <div class="member-card reveal">
+            <div class="member-card-img-wrap img-zoom"><div class="img-skeleton" style="height:200px;">
+              <img src="https://picsum.photos/seed/rswa-person2/400/400" alt="Priya Patel" class="member-card-img" loading="lazy" /></div>
+            </div>
+            <div class="member-card-body">
+              <h3 class="member-name">Priya Patel</h3>
+              <p class="member-role">Vice President</p>
+              <div class="member-info"><span class="badge badge-primary">Property Consultant</span><span class="badge badge-muted">Virar</span></div>
+            </div>
+            <div class="member-card-footer">
+              <span class="member-location"><i class="fa fa-map-pin"></i> Virar Branch</span>
+              <div class="member-social"><a href="member-profile.html" class="member-social-btn" title="View Profile"><i class="fa fa-user"></i></a></div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-32">
+          <a href="members.html" class="btn btn-outline">View All Members <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="logo footer-logo">
+          <div class="logo-icon">R</div>
+          <div class="logo-text"><span class="logo-name">RSWA</span><span class="logo-tagline">Realtors Social Welfare Association</span></div>
+        </a>
+        <p class="footer-brand-desc">Empowering real estate professionals across the Western corridor since 2010.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html"><i class="fa fa-angle-right"></i> Home</a></li>
+          <li><a href="about.html"><i class="fa fa-angle-right"></i> About RSWA</a></li>
+          <li><a href="members.html"><i class="fa fa-angle-right"></i> Our Members</a></li>
+          <li><a href="events.html"><i class="fa fa-angle-right"></i> Events</a></li>
+          <li><a href="contact.html"><i class="fa fa-angle-right"></i> Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav">
+        <h4>Branches</h4>
+        <ul>
+          <li><a href="location.html"><i class="fa fa-angle-right"></i> Mumbai HQ</a></li>
+          <li><a href="location.html"><i class="fa fa-angle-right"></i> Virar Branch</a></li>
+          <li><a href="location.html"><i class="fa fa-angle-right"></i> Palghar Branch</a></li>
+          <li><a href="location.html"><i class="fa fa-angle-right"></i> Boisar Branch</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav">
+        <h4>Contact</h4>
+        <div class="footer-contact-item"><i class="fa fa-map-pin"></i><span>301 Sahyog House, Andheri West, Mumbai &ndash; 400058</span></div>
+        <div class="footer-contact-item"><i class="fa fa-phone"></i><span>+91 98765 43210</span></div>
+        <div class="footer-contact-item"><i class="fa fa-envelope"></i><span>info@rswa.org.in</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2024 RSWA &mdash; Realtors Social Welfare Association. All rights reserved.</p>
+      <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+    </div>
+  </footer>
+
+  <button id="backToTop" aria-label="Back to top"><i class="fa fa-arrow-up"></i></button>
+  <script src="js/main.js"></script>
+</body>
+</html>
