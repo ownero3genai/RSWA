@@ -421,6 +421,88 @@
   </footer>
 
   <button id="backToTop" aria-label="Back to top"><i class="fa fa-arrow-up"></i></button>
+
+  <!-- ===================== JOIN RSWA MODAL ===================== -->
+  <div id="joinModal" class="join-modal" aria-hidden="true" aria-labelledby="joinModalTitle">
+    <div class="join-modal-overlay"></div>
+    <div class="join-modal-content">
+      <button class="join-modal-close" id="joinModalClose" aria-label="Close modal">
+        <i class="fa fa-times"></i>
+      </button>
+
+      <div class="join-modal-header">
+        <h2 id="joinModalTitle" class="join-modal-title">Join RSWA</h2>
+        <p class="join-modal-subtitle">Become part of India's most trusted real estate network</p>
+      </div>
+
+      <div class="join-modal-body">
+        <div class="contact-form">
+          <form action="#" method="POST" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="modalFirstName">First Name <span style="color:var(--accent);">*</span></label>
+                <input type="text" id="modalFirstName" name="firstName" class="form-control" placeholder="Rajesh" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="modalLastName">Last Name <span style="color:var(--accent);">*</span></label>
+                <input type="text" id="modalLastName" name="lastName" class="form-control" placeholder="Sharma" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="modalEmail">Email Address <span style="color:var(--accent);">*</span></label>
+                <input type="email" id="modalEmail" name="email" class="form-control" placeholder="rajesh@example.com" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="modalPhone">Phone Number</label>
+                <input type="tel" id="modalPhone" name="phone" class="form-control" placeholder="+91 98765 43210" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="modalBranch">Nearest Branch</label>
+              <select id="modalBranch" name="branch" class="form-control">
+                <option value="" disabled selected>Select a branch</option>
+                <option value="mumbai">Mumbai HQ</option>
+                <option value="virar">Virar Branch</option>
+                <option value="palghar">Palghar Branch</option>
+                <option value="boisar">Boisar Branch</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="modalSubject">Subject</label>
+              <select id="modalSubject" name="subject" class="form-control">
+                <option value="" disabled selected>What is your inquiry about?</option>
+                <option value="membership">Membership Application</option>
+                <option value="rera">RERA Support</option>
+                <option value="legal">Legal Assistance</option>
+                <option value="events">Events &amp; Programs</option>
+                <option value="dispute">Dispute Resolution</option>
+                <option value="other">General Inquiry</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="modalMessage">Your Message <span style="color:var(--accent);">*</span></label>
+              <textarea id="modalMessage" name="message" class="form-control" placeholder="Tell us how we can help you..." required></textarea>
+            </div>
+
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+              <input type="checkbox" id="modalConsent" name="consent" style="width:16px;height:16px;accent-color:var(--primary);flex-shrink:0;" />
+              <label for="modalConsent" style="font-size:0.83rem;color:var(--text-muted);line-height:1.5;">I agree to RSWA's <a href="#" style="color:var(--primary);">Privacy Policy</a> and consent to being contacted regarding my inquiry.</label>
+            </div>
+
+            <button type="submit" class="btn btn-accent w-full btn-lg" style="width:100%;justify-content:center;">
+              <i class="fa fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/main.js"></script>
 </body>
 </html>

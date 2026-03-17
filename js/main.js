@@ -23,6 +23,7 @@
     initEventFilter();
     initFAQAccordion();
     initStaggerChildren();
+    initJoinModal();
   });
 
   /* ============================================================
@@ -568,7 +569,83 @@
   }
 
   /* ============================================================
-     15. HERO TRANSPARENT HEADER HANDLING
+     15. JOIN RSWA MODAL FUNCTIONALITY
+     ============================================================ */
+  function initJoinModal() {
+    var modal = document.getElementById('joinModal');
+    var closeBtn = document.getElementById('joinModalClose');
+    
+    if (!modal) return;
+
+    // All "Join RSWA" buttons
+    var joinButtons = document.querySelectorAll('a[href="contact.html"].btn, a[href="contact.html"].btn-accent');
+
+    // Open modal instead of navigating
+    joinButtons.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        openJoinModal();
+      });
+    });
+
+    // Close button click
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        closeJoinModal();
+      });
+    }
+
+    // Close when clicking on overlay
+    var overlay = modal.querySelector('.join-modal-overlay');
+    if (overlay) {
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) {
+          closeJoinModal();
+        }
+      });
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeJoinModal();
+      }
+    });
+
+    // Form submission
+    var form = modal.querySelector('form');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        // Handle form submission (you can add backend integration here)
+        alert('Thank you for your interest! We will contact you soon.');
+        closeJoinModal();
+        form.reset();
+      });
+    }
+  }
+
+  function openJoinModal() {
+    var modal = document.getElementById('joinModal');
+    if (!modal) return;
+
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeJoinModal() {
+    var modal = document.getElementById('joinModal');
+    if (!modal) return;
+
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  /* ============================================================
+     16. HERO TRANSPARENT HEADER HANDLING
      ============================================================ */
   // If page has a hero with transparent header
   var heroSection = document.querySelector('.hero');
