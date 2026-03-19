@@ -10,64 +10,103 @@
 </head>
 <body>
 
-  <!-- ===================== HEADER ===================== -->
-  <header id="header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <div class="logo-icon">R</div>
-        <div class="logo-text">
-          <span class="logo-name">RSWA</span>
-          <span class="logo-tagline">Realtors Social Welfare Association</span>
-        </div>
+  <!-- ===================== HEADER / NAVBAR ===================== -->
+  <header id="header" class="navbar" role="banner">
+    <div class="container navbar-container">
+      <!-- Logo -->
+      <a href="index.html" class="navbar-logo" aria-label="RSWA Home">
+        <img src="logo.png" alt="RSWA Logo" class="navbar-logo-img" />
       </a>
-      <nav class="main-nav" role="navigation">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <div class="nav-dropdown">
-          <a href="members.html" class="nav-link">Members <i class="fa fa-chevron-down fa-xs"></i></a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="members.html">All Members</a></li>
-            <li><a class="dropdown-item" href="branch-members.html">Branch Members</a></li>
-            <li><a class="dropdown-item" href="member-profile.html">Member Profile</a></li>
+
+      <!-- Desktop Navigation -->
+      <nav class="navbar-menu" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="navbar-link">Home</a>
+        <a href="about.html" class="navbar-link">About</a>
+        
+        <!-- Members Dropdown -->
+        <div class="navbar-dropdown">
+          <a href="members.html" class="navbar-link navbar-dropdown-toggle">
+            Members 
+            <span class="dropdown-icon"><i class="fa fa-chevron-down"></i></span>
+          </a>
+          <ul class="navbar-dropdown-menu">
+            <li><a class="navbar-dropdown-item" href="members.html">All Members</a></li>
+            <li><a class="navbar-dropdown-item" href="branch-members.html">Branch Members</a></li>
+            <li><a class="navbar-dropdown-item" href="member-profile.html">Member Profile</a></li>
           </ul>
         </div>
-        <div class="nav-dropdown">
-          <a href="location.html" class="nav-link">Branches <i class="fa fa-chevron-down fa-xs"></i></a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="location.html">Mumbai HQ</a></li>
-            <li><a class="dropdown-item" href="location.html">Virar Branch</a></li>
-            <li><a class="dropdown-item" href="location.html">Palghar Branch</a></li>
-            <li><a class="dropdown-item" href="location.html">Boisar Branch</a></li>
+
+        <!-- Branches Dropdown -->
+        <div class="navbar-dropdown">
+          <a href="location.html" class="navbar-link navbar-dropdown-toggle">
+            Branches 
+            <span class="dropdown-icon"><i class="fa fa-chevron-down"></i></span>
+          </a>
+          <ul class="navbar-dropdown-menu">
+            <li><a class="navbar-dropdown-item" href="location.html">Mumbai HQ</a></li>
+            <li><a class="navbar-dropdown-item" href="location.html">Virar Branch</a></li>
+            <li><a class="navbar-dropdown-item" href="location.html">Palghar Branch</a></li>
+            <li><a class="navbar-dropdown-item" href="location.html">Boisar Branch</a></li>
           </ul>
         </div>
-        <a href="events.html" class="nav-link">Events</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+
+        <a href="events.html" class="navbar-link">Events</a>
+        <a href="contact.html" class="navbar-link">Contact</a>
       </nav>
-      <a href="contact.html" class="btn btn-accent btn-sm header-cta">Join RSWA</a>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+
+      <!-- CTA Button -->
+      <a href="contact.html" class="btn btn-accent btn-sm navbar-cta" aria-label="Join RSWA">Join RSWA</a>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="navbar-mobile-toggle" id="mobileToggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
     </div>
   </header>
 
-  <nav class="mobile-nav" role="navigation">
-    <a href="index.html" class="mobile-nav-link">Home</a>
-    <a href="about.html" class="mobile-nav-link">About</a>
-    <a href="members.html" class="mobile-nav-link" data-dropdown="mob-members">Members <i class="fa fa-chevron-down fa-xs"></i></a>
-    <div class="mobile-dropdown-menu" id="mob-members">
-      <a href="members.html" class="mobile-dropdown-item">All Members</a>
-      <a href="branch-members.html" class="mobile-dropdown-item">Branch Members</a>
+  <!-- Mobile Navigation Menu -->
+  <nav id="mobile-menu" class="navbar-mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <div class="mobile-menu-inner">
+      <a href="index.html" class="mobile-menu-link">Home</a>
+      <a href="about.html" class="mobile-menu-link">About</a>
+      
+      <!-- Mobile Members Dropdown -->
+      <div class="mobile-menu-item">
+        <button class="mobile-menu-link mobile-menu-dropdown-toggle" data-target="mobile-members">
+          Members 
+          <span class="dropdown-icon"><i class="fa fa-chevron-down"></i></span>
+        </button>
+        <div id="mobile-members" class="mobile-menu-submenu">
+          <a href="members.html" class="mobile-menu-sublink">All Members</a>
+          <a href="branch-members.html" class="mobile-menu-sublink">Branch Members</a>
+          <a href="member-profile.html" class="mobile-menu-sublink">Member Profile</a>
+        </div>
+      </div>
+
+      <!-- Mobile Branches Dropdown -->
+      <div class="mobile-menu-item">
+        <button class="mobile-menu-link mobile-menu-dropdown-toggle" data-target="mobile-branches">
+          Branches 
+          <span class="dropdown-icon"><i class="fa fa-chevron-down"></i></span>
+        </button>
+        <div id="mobile-branches" class="mobile-menu-submenu">
+          <a href="location.html" class="mobile-menu-sublink">Mumbai HQ</a>
+          <a href="location.html" class="mobile-menu-sublink">Virar Branch</a>
+          <a href="location.html" class="mobile-menu-sublink">Palghar Branch</a>
+          <a href="location.html" class="mobile-menu-sublink">Boisar Branch</a>
+        </div>
+      </div>
+
+      <a href="events.html" class="mobile-menu-link">Events</a>
+      <a href="contact.html" class="mobile-menu-link">Contact</a>
+
+      <!-- Mobile CTA -->
+      <div class="mobile-menu-cta">
+        <a href="contact.html" class="btn btn-accent btn-block">Join RSWA</a>
+      </div>
     </div>
-    <a href="location.html" class="mobile-nav-link" data-dropdown="mob-branches">Branches <i class="fa fa-chevron-down fa-xs"></i></a>
-    <div class="mobile-dropdown-menu" id="mob-branches">
-      <a href="location.html" class="mobile-dropdown-item">Mumbai HQ</a>
-      <a href="location.html" class="mobile-dropdown-item">Virar Branch</a>
-      <a href="location.html" class="mobile-dropdown-item">Palghar Branch</a>
-      <a href="location.html" class="mobile-dropdown-item">Boisar Branch</a>
-    </div>
-    <a href="events.html" class="mobile-nav-link active">Events</a>
-    <a href="contact.html" class="mobile-nav-link">Contact</a>
-    <div style="padding:20px 0;"><a href="contact.html" class="btn btn-accent" style="width:100%;justify-content:center;display:flex;">Join RSWA</a></div>
   </nav>
 
   <main>
