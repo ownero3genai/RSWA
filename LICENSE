@@ -1,105 +1,21 @@
-PROPRIETARY LICENSE
+MIT License
 
-Copyright (c) 2014 RSWA — Realtors Social Welfare Association
-All Rights Reserved.
+Copyright (c) 2026 RSWA — Realtors Social Welfare Association
 
-Website Designed & Developed by: O3GenAI IT Solutions
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-================================================================================
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-OWNERSHIP & RIGHTS
-==================
-
-This website — including but not limited to all HTML source code, CSS stylesheets,
-JavaScript files, design layouts, UI/UX components, animations, visual elements,
-color schemes, typography choices, imagery arrangements, and overall aesthetic —
-was exclusively designed and developed by O3GenAI IT Solutions for
-RSWA (Realtors Social Welfare Association).
-
-All design rights, intellectual property rights, and website ownership are held
-jointly by:
-
-  - DESIGNER  : O3GenAI IT Solutions (design & development rights)
-  - OWNER     : RSWA — Realtors Social Welfare Association (usage & operational rights)
-
-================================================================================
-
-RESTRICTIONS
-============
-
-You are NOT permitted to:
-
-1. Copy, reproduce, or clone any part of this website's design, layout, or code
-   for any purpose without explicit written permission from O3GenAI IT Solutions
-   and RSWA.
-
-2. Redistribute, resell, sublicense, or transfer any portion of this codebase
-   or design to any third party.
-
-3. Use any design element, UI component, color scheme, layout pattern, or visual
-   style from this website to create derivative works for personal or commercial
-   use.
-
-4. Remove, alter, or obscure any copyright notices, credits, or attributions
-   present in the source code or on the website.
-
-5. Reverse engineer, decompile, or disassemble any part of this website for the
-   purpose of replication.
-
-6. Claim ownership, authorship, or creative credit over any design or code
-   element produced in this project.
-
-================================================================================
-
-PERMITTED USES
-==============
-
-The following are permitted ONLY with express written consent from both
-O3GenAI IT Solutions and RSWA:
-
-- Viewing the source code for personal educational reference
-- Citing or referencing this project in design portfolios or case studies
-  (with full attribution to O3GenAI IT Solutions and RSWA)
-
-================================================================================
-
-ATTRIBUTION REQUIREMENT
-=======================
-
-Any permitted use of any content, code, or design element from this project
-MUST include the following attribution:
-
-  Designed & Developed by O3GenAI IT Solutions for
-   RSWA — Realtors Social Welfare Association
-   © 2014. All Rights Reserved.
-
-================================================================================
-
-DISCLAIMER
-==========
-
-This software and design is provided "as is" for the exclusive use of RSWA.
-O3GenAI IT Solutions makes no warranties of any kind regarding this website
-beyond the scope of the design and development engagement.
-
-================================================================================
-
-CONTACT
-=======
-
-For licensing inquiries, permissions, or to report unauthorized use:
-
-  RSWA — Realtors Social Welfare Association
-  Nalasopara West, Palghar 401209
-  Email : www.rswa.in
-
-  O3GenAI IT Solutions
-  Email : owner.o3genai@gmail.com
-
-================================================================================
-
-Unauthorized use of this website's design or code is a violation of intellectual
-property law and will be pursued to the fullest extent permitted by law.
-
-© 2014 RSWA — Realtors Social Welfare Association & O3GenAI IT Solutions.
-All Rights Reserved.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

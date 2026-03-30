@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RSWA Branch Committee & Leadership — Meet the board leaders and committee members driving RSWA's mission across Vasai, Virar, and Nalasopara." />
+  <title>Branch Leadership — RSWA | Realtors Social Welfare Association</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plh7eqjn08uE9EFT3YFSQiGv4BERg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ============================================================
+       BRANCH PAGE — Variables
+       ============================================================ */
+    :root {
+      --teal:      #0d9488;
+      --teal-dark: #0a7a70;
+      --teal-faint: rgba(13,148,136,0.1);
+      --gold:      #f5a623;
+    }
+
+    /* ============================================================
+       BRANCH HERO
+       ============================================================ */
+    .branch-hero {
+      background: linear-gradient(135deg, #1A1A2E 0%, #162040 50%, #1A1A2E 100%);
+      padding: 64px 0 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    .branch-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -45deg, transparent, transparent 18px,
+        rgba(255,255,255,0.015) 18px, rgba(255,255,255,0.015) 19px
+      );
+    }
+    .branch-hero .container { position: relative; z-index: 1; }
+
+    .branch-hero-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 20px;
+    }
+    .branch-hero-breadcrumb a { color: rgba(255,255,255,0.45); transition: color 0.2s; }
+    .branch-hero-breadcrumb a:hover { color: var(--orange); }
+    .branch-hero-breadcrumb .sep { font-size: 10px; }
+    .branch-hero-breadcrumb .cur { color: var(--orange); font-weight: 600; }
+
+    .branch-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(232,119,34,0.15);
+      border: 1px solid rgba(232,119,34,0.3);
+      color: var(--orange);
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+    }
+
+    .branch-hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .branch-hero-title span { color: var(--gold); }
+
+    .branch-hero-sub {
+      font-size: 16px;
+      color: rgba(255,255,255,0.6);
+      max-width: 520px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    .branch-hero-stats {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .branch-hero-stat {
+      text-align: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 16px 24px;
+      min-width: 100px;
+    }
+    .branch-hero-stat-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: white;
+      display: block;
+      line-height: 1;
+    }
+    .branch-hero-stat:nth-child(1) .branch-hero-stat-num { color: var(--orange); }
+    .branch-hero-stat:nth-child(2) .branch-hero-stat-num { color: var(--gold); }
+    .branch-hero-stat:nth-child(3) .branch-hero-stat-num { color: var(--teal); }
+    .branch-hero-stat:nth-child(4) .branch-hero-stat-num { color: #a78bfa; }
+    .branch-hero-stat-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    /* ============================================================
+       TOOLBAR
+       ============================================================ */
+    .branch-section { background: #f0f2f5; padding: 48px 0 72px; }
+
+    .branch-toolbar {
+      background: white;
+      border-radius: 14px;
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      margin-bottom: 36px;
+    }
+    .branch-search-wrap {
+      position: relative;
+      min-width: 220px;
+      flex: 1;
+    }
+    .branch-search-wrap i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #bbb;
+      font-size: 13px;
+      pointer-events: none;
+    }
+    .branch-search {
+      width: 100%;
+      padding: 10px 14px 10px 38px;
+      border: 1.5px solid #e5e5e5;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #333;
+      background: #f8f8f8;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+    .branch-search:focus {
+      border-color: var(--orange);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(232,119,34,0.1);
+    }
+
+    .branch-filters {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .branch-filter-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 7px 15px;
+      border-radius: 50px;
+      border: 1.5px solid #e0e0e0;
+      background: transparent;
+      color: #777;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .branch-filter-btn:hover { border-color: var(--orange); color: var(--orange); }
+    .branch-filter-btn.active { background: var(--orange); border-color: var(--orange); color: white; }
+    .branch-filter-btn.teal:hover  { border-color: var(--teal); color: var(--teal); }
+    .branch-filter-btn.teal.active { background: var(--teal); border-color: var(--teal); color: white; }
+
+    .branch-results {
+      margin-left: auto;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #999;
+      white-space: nowrap;
+    }
+    .branch-results strong { color: #333; font-weight: 600; }
+
+    /* ============================================================
+       SECTION HEADERS
+       ============================================================ */
+    .branch-group { margin-bottom: 48px; }
+    .branch-group-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .branch-group-ribbon {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 50px;
+    }
+    .branch-group-ribbon.board    { background: rgba(232,119,34,0.12); color: var(--orange); border: 1.5px solid rgba(232,119,34,0.25); }
+    .branch-group-ribbon.committee { background: var(--teal-faint); color: var(--teal); border: 1.5px solid rgba(13,148,136,0.25); }
+    .branch-group-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--dark-text);
+    }
+    .branch-group-count {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #aaa;
+      margin-left: 4px;
+      font-weight: 500;
+    }
+
+    /* ============================================================
+       MEMBER CARDS
+       ============================================================ */
+    .branch-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .bc-card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+    }
+    .bc-card:hover { transform: translateY(-6px); box-shadow: 0 14px 36px rgba(0,0,0,0.13); }
+
+    .bc-photo-wrap {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+    .bc-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease;
+    }
+    .bc-card:hover .bc-photo-wrap img { transform: scale(1.07); }
+
+    .bc-ribbon {
+      position: absolute;
+      top: 12px;
+      left: 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px 4px 12px;
+      border-radius: 0 50px 50px 0;
+    }
+    .bc-ribbon.board      { background: var(--orange); color: white; }
+    .bc-ribbon.committee  { background: var(--teal);   color: white; }
+
+    .bc-region-badge {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 3px 10px;
+      border-radius: 50px;
+      background: rgba(0,0,0,0.55);
+      color: white;
+      backdrop-filter: blur(4px);
+    }
+
+    .bc-card-body {
+      padding: 16px 18px 0;
+    }
+    .bc-role {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .bc-role.board      { color: var(--orange); }
+    .bc-role.committee  { color: var(--teal); }
+    .bc-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark-text);
+      margin-bottom: 4px;
+    }
+    .bc-location {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #999;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 0;
+    }
+    .bc-location i { font-size: 10px; color: #bbb; }
+
+    .bc-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px 16px;
+      margin-top: 12px;
+      border-top: 1px solid #f0f0f0;
+    }
+    .bc-type-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 3px 10px;
+      border-radius: 50px;
+    }
+    .bc-type-tag.board      { background: rgba(232,119,34,0.1); color: var(--orange); }
+    .bc-type-tag.committee  { background: var(--teal-faint); color: var(--teal); }
+
+    .bc-profile-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: white;
+      background: var(--navy);
+      border: none;
+      padding: 6px 14px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .bc-profile-btn:hover { background: var(--orange); }
+
+    /* Empty state */
+    .branch-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 24px;
+      color: #bbb;
+    }
+    .branch-empty i { font-size: 42px; color: #ddd; display: block; margin-bottom: 14px; }
+    .branch-empty p { font-family: 'Inter', sans-serif; font-size: 14px; }
+
+    /* ============================================================
+       MODAL
+       ============================================================ */
+    .bc-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 4000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .bc-modal.open { opacity: 1; pointer-events: all; }
+
+    .bc-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(5,10,20,0.8);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .bc-modal-box {
+      position: relative;
+      width: 100%;
+      max-width: 660px;
+      max-height: 92vh;
+      background: white;
+      border-radius: 20px;
+      overflow-y: auto;
+      box-shadow: 0 28px 70px rgba(0,0,0,0.4);
+      scrollbar-width: thin;
+    }
+
+    .bc-modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.15);
+      border: none;
+      border-radius: 50%;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+    .bc-modal-close:hover { background: rgba(255,255,255,0.3); }
+
+    /* Modal Hero */
+    .bc-modal-hero {
+      position: relative;
+      padding: 44px 32px 32px;
+      text-align: center;
+      overflow: hidden;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .bc-modal-photo-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center top;
+      filter: blur(16px) brightness(0.3);
+      transform: scale(1.15);
+    }
+    .bc-modal-hero.board::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(232,119,34,0.45) 0%, rgba(26,26,46,0.65) 100%);
+    }
+    .bc-modal-hero.committee::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(13,148,136,0.45) 0%, rgba(26,26,46,0.65) 100%);
+    }
+    .bc-modal-hero > * { position: relative; z-index: 1; }
+
+    .bc-modal-avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,0.3);
+      margin-bottom: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    .bc-modal-ribbon {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-bottom: 10px;
+    }
+    .bc-modal-ribbon.board      { background: rgba(245,166,35,0.25); color: var(--gold); border: 1px solid rgba(245,166,35,0.4); }
+    .bc-modal-ribbon.committee  { background: rgba(13,148,136,0.25); color: #5eead4; border: 1px solid rgba(13,148,136,0.4); }
+
+    .bc-modal-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 4px;
+    }
+    .bc-modal-role-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+    }
+
+    /* Modal Body */
+    .bc-modal-body { padding: 28px 30px 30px; }
+
+    .bc-modal-bio {
+      margin: 0 0 24px;
+      padding: 16px 20px;
+      border-left: 4px solid var(--orange);
+      background: #fdf8f4;
+      border-radius: 0 10px 10px 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-style: italic;
+      color: #555;
+      line-height: 1.7;
+    }
+    .bc-modal-bio.committee { border-left-color: var(--teal); background: #f0fdf9; }
+
+    .bc-modal-panels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .bc-modal-panel {
+      background: #f8f9fb;
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .bc-modal-panel-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .bc-modal-panel-title.board      { color: var(--orange); }
+    .bc-modal-panel-title.committee  { color: var(--teal); }
+    .bc-modal-panel-field { margin-bottom: 8px; }
+    .bc-modal-panel-field:last-child { margin-bottom: 0; }
+    .bc-modal-panel-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 1px;
+    }
+    .bc-modal-panel-value {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--dark-text);
+    }
+
+    .bc-modal-about {
+      background: #f8f9fb;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 20px;
+    }
+    .bc-modal-about-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #aaa;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .bc-modal-about-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: #555;
+      line-height: 1.75;
+    }
+
+    .bc-modal-status-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .bc-modal-status-active {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: #16a34a;
+    }
+    .bc-status-dot {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(34,197,94,0.2);
+      animation: pulse-g 2s infinite;
+    }
+    @keyframes pulse-g {
+      0%,100% { box-shadow: 0 0 0 3px rgba(34,197,94,0.2); }
+      50%      { box-shadow: 0 0 0 6px rgba(34,197,94,0.06); }
+    }
+    .bc-modal-verified {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: #888;
+    }
+    .bc-modal-verified i { color: var(--orange); font-size: 12px; }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 1199px) { .branch-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 991px)  {
+      .branch-grid { grid-template-columns: repeat(2, 1fr); }
+      .branch-hero-title { font-size: 32px; }
+      .branch-hero-stats { gap: 14px; }
+    }
+    @media (max-width: 767px)  {
+      .branch-grid { grid-template-columns: repeat(2, 1fr); }
+      .branch-hero-title { font-size: 26px; }
+      .bc-modal-panels { grid-template-columns: 1fr; }
+      .bc-modal-body { padding: 20px 18px 24px; }
+    }
+    @media (max-width: 480px)  {
+      .branch-grid { grid-template-columns: 1fr 1fr; }
+      .branch-hero-stats { display: grid; grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <a href="tel:+918888898272"><i class="fa-solid fa-phone"></i> +91 88888 98272</a>
+        <a href="mailto:info@rswa.in"><i class="fa-solid fa-envelope"></i> info@rswa.in</a>
+      </div>
+      <div class="top-bar-center">
+        <span class="iso-badge"><i class="fa-solid fa-certificate"></i> Registered Maharashtra/2000/16/Thane</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <img src="asset/RSWA-logo.png" alt="RSWA Logo" class="nav-logo" onerror="this.style.display='none'" />
+      </a>
+      <div class="nav-links" role="list">
+        <a href="index.html"     class="nav-link"        role="listitem">Home</a>
+        <a href="about.html"     class="nav-link"        role="listitem">About</a>
+        <a href="membership.html" class="nav-link"       role="listitem">Members</a>
+        <a href="branch.html"    class="nav-link active" role="listitem">Branch</a>
+        <a href="media.html"     class="nav-link"        role="listitem">Gallery</a>
+        <a href="contact.html"   class="nav-link"        role="listitem">Contact</a>
+      </div>
+      <a href="contact.html" class="btn-join">JOIN NOW</a>
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE DRAWER -->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
+    <button class="drawer-close" id="drawerClose" aria-label="Close navigation menu">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="membership.html">Members</a>
+      <a href="branch.html" class="active">Branch</a>
+      <a href="media.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="contact.html" class="drawer-join">JOIN NOW</a>
+  </nav>
+
+  <!-- ============================================================
+       BRANCH HERO
+       ============================================================ -->
+  <section class="branch-hero" aria-label="Branch page hero">
+    <div class="container">
+
+      <div class="branch-hero-breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
+        <span class="cur">Branch Members</span>
+      </div>
+
+      <div class="branch-hero-badge">
+        <i class="fa-solid fa-star"></i> Branch Leadership
+      </div>
+
+      <h1 class="branch-hero-title">
+        Branch <span>Committee</span><br>&amp; Leadership
+      </h1>
+      <p class="branch-hero-sub">
+        Meet the dedicated board leaders and committee members driving RSWA's mission across Vasai, Virar, and Nalasopara.
+      </p>
+
+      <div class="branch-hero-stats">
+        <div class="branch-hero-stat">
+          <span class="branch-hero-stat-num" id="heroTotal">16</span>
+          <p class="branch-hero-stat-label">Total Members</p>
+        </div>
+        <div class="branch-hero-stat">
+          <span class="branch-hero-stat-num" id="heroBoard">6</span>
+          <p class="branch-hero-stat-label">Board Leaders</p>
+        </div>
+        <div class="branch-hero-stat">
+          <span class="branch-hero-stat-num" id="heroCommittee">10</span>
+          <p class="branch-hero-stat-label">Committee Members</p>
+        </div>
+        <div class="branch-hero-stat">
+          <span class="branch-hero-stat-num">3</span>
+          <p class="branch-hero-stat-label">Branches</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <main>
+    <section class="branch-section" aria-label="Branch member directory">
+      <div class="container">
+
+        <!-- Toolbar -->
+        <div class="branch-toolbar">
+          <div class="branch-search-wrap">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" id="branchSearch" class="branch-search"
+                   placeholder="Search by name, role, or region…"
+                   aria-label="Search branch members" autocomplete="off" />
+          </div>
+          <div class="branch-filters" role="group" aria-label="Filter members">
+            <button class="branch-filter-btn active" data-filter="all">All</button>
+            <button class="branch-filter-btn" data-filter="board">Board Committee</button>
+            <button class="branch-filter-btn teal" data-filter="committee">Committee Members</button>
+            <button class="branch-filter-btn" data-filter="vasai">Vasai</button>
+            <button class="branch-filter-btn" data-filter="virar">Virar</button>
+            <button class="branch-filter-btn" data-filter="nalasopara">Nalasopara</button>
+          </div>
+          <span class="branch-results" id="branchResults"><strong>16</strong> members</span>
+        </div>
+
+        <!-- Board Committee -->
+        <div class="branch-group" id="boardGroup">
+          <div class="branch-group-header">
+            <span class="branch-group-ribbon board">★ Board Committee</span>
+            <span class="branch-group-title">Executive Board<span class="branch-group-count" id="boardCount"></span></span>
+          </div>
+          <div class="branch-grid" id="boardGrid" role="list"></div>
+        </div>
+
+        <!-- Committee Members -->
+        <div class="branch-group" id="committeeGroup">
+          <div class="branch-group-header">
+            <span class="branch-group-ribbon committee">○ Committee Members</span>
+            <span class="branch-group-title">Branch Committee<span class="branch-group-count" id="committeeCount"></span></span>
+          </div>
+          <div class="branch-grid" id="committeeGrid" role="list"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA STRIP -->
+    <div class="cta-strip" aria-label="Join RSWA">
+      <div class="container">
+        <div class="cta-left">
+          <h2>Want to Serve on the Committee?</h2>
+          <p>Nominations open every two years — join the leadership that shapes RSWA's future.</p>
+        </div>
+        <div class="cta-right">
+          <a href="contact.html" class="btn-cta-white">Get Involved</a>
+          <a href="tel:+918888898272" class="btn-cta-outline-white">
+            <i class="fa-solid fa-phone"></i> +91 88888 98272
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="asset/RSWA-logo.png" alt="RSWA Logo" style="height:64px;width:auto;object-fit:contain;margin-bottom:12px;" onerror="this.style.display='none'" />
+          <p>Empowering India's real estate professionals since 2010. A trusted network of realtors committed to ethical practice, professional growth, and community welfare across Maharashtra.</p>
+        </div>
+        <div>
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="membership.html">Members</a></li>
+            <li><a href="branch.html">Branch Offices</a></li>
+            <li><a href="media.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Contact Info</h3>
+          <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><span>+91 88888 98272</span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><span>info@rswa.in</span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>RSWA House, Mumbai,<br>Maharashtra, India</span></div>
+        </div>
+        <div>
+          <h3 class="footer-heading">Follow Us</h3>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+          <p class="newsletter-label">Newsletter</p>
+          <form class="newsletter-form" onsubmit="return false;">
+            <input type="email" class="newsletter-input" placeholder="Your email address" autocomplete="email" />
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 RSWA. All Rights Reserved.</p>
+        <div class="footer-bottom-right">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       MODAL
+       ============================================================ -->
+  <div class="bc-modal" id="bcModal" role="dialog" aria-modal="true" aria-label="Member profile">
+    <div class="bc-modal-backdrop" id="bcBackdrop"></div>
+    <div class="bc-modal-box">
+      <button class="bc-modal-close" id="bcModalClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+
+      <div class="bc-modal-hero" id="bcModalHero">
+        <div class="bc-modal-photo-bg" id="bcModalBg"></div>
+        <img class="bc-modal-avatar" id="bcModalAvatar" src="" alt="" />
+        <span class="bc-modal-ribbon" id="bcModalRibbon"></span>
+        <h2 class="bc-modal-name" id="bcModalName"></h2>
+        <p class="bc-modal-role-text" id="bcModalRoleText"></p>
+      </div>
+
+      <div class="bc-modal-body">
+        <blockquote class="bc-modal-bio" id="bcModalBio"></blockquote>
+
+        <div class="bc-modal-panels">
+          <div class="bc-modal-panel">
+            <p class="bc-modal-panel-title" id="bcPanelTitle1"><i class="fa-solid fa-id-badge"></i> Position Details</p>
+            <div class="bc-modal-panel-field">
+              <p class="bc-modal-panel-label">Role</p>
+              <p class="bc-modal-panel-value" id="bcModalRole"></p>
+            </div>
+            <div class="bc-modal-panel-field">
+              <p class="bc-modal-panel-label">Region</p>
+              <p class="bc-modal-panel-value" id="bcModalRegion"></p>
+            </div>
+          </div>
+          <div class="bc-modal-panel">
+            <p class="bc-modal-panel-title" id="bcPanelTitle2"><i class="fa-solid fa-building"></i> Association</p>
+            <div class="bc-modal-panel-field">
+              <p class="bc-modal-panel-label">Organisation</p>
+              <p class="bc-modal-panel-value" id="bcModalOrg"></p>
+            </div>
+            <div class="bc-modal-panel-field">
+              <p class="bc-modal-panel-label">Reg. Number</p>
+              <p class="bc-modal-panel-value" id="bcModalReg"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bc-modal-about">
+          <p class="bc-modal-about-title"><i class="fa-solid fa-user"></i> About</p>
+          <p class="bc-modal-about-text" id="bcModalAbout"></p>
+        </div>
+
+        <div class="bc-modal-status-bar">
+          <div class="bc-modal-status-active">
+            <span class="bc-status-dot"></span>
+            Active Member
+          </div>
+          <div class="bc-modal-verified">
+            <i class="fa-solid fa-circle-check"></i>
+            RSWA Verified Member
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       DATA + LOGIC
+       ============================================================ -->
+  <script>
+    /* ─── Member Data ─────────────────────────────────────── */
+    const boardData = [
+      {
+        id: 'B001', type: 'board', region: 'all', regionLabel: 'All Maharashtra',
+        name: 'Sanjay Padwal', role: 'Maharashtra Chairman',
+        location: 'Mumbai, Maharashtra', org: 'RSWA Head Office', reg: 'MH/2018/001',
+        photo: 'https://picsum.photos/seed/rswa-sanjay/400/500',
+        bio: '"Leading RSWA with an unwavering commitment to professional excellence and the welfare of every realtor across Maharashtra."',
+        about: 'Sanjay Padwal has been at the forefront of real estate advocacy in Maharashtra since 2010. As Maharashtra Chairman, he oversees operations of all RSWA chapters and leads the association\'s engagement with government bodies and regulatory authorities. Under his leadership, RSWA grew from a small collective to a 500+ member network.'
+      },
+      {
+        id: 'B002', type: 'board', region: 'virar', regionLabel: 'Virar',
+        name: 'Satish Chavan', role: 'Maharashtra Secretary',
+        location: 'Virar West, Vasai-Virar', org: 'RSWA Virar Chapter', reg: 'MH/2018/002',
+        photo: 'https://picsum.photos/seed/rswa-satish/400/500',
+        bio: '"Every document, every record, every decision — handled with integrity so our members can focus on what they do best."',
+        about: 'Satish Chavan brings meticulous attention to detail as Maharashtra Secretary. He manages all official communications, minutes, and records for RSWA, ensuring transparency and accountability in the association\'s governance. He has led the Virar chapter since its founding.'
+      },
+      {
+        id: 'B003', type: 'board', region: 'vasai', regionLabel: 'Vasai',
+        name: 'Chandrakant Gupta', role: 'Maharashtra Treasurer',
+        location: 'Vasai West, Palghar', org: 'RSWA Vasai Chapter', reg: 'MH/2018/003',
+        photo: 'https://picsum.photos/seed/rswa-ck/400/500',
+        bio: '"Sound financial governance is the backbone of a strong association. Every rupee is accounted for, every decision is member-first."',
+        about: 'Chandrakant Gupta oversees RSWA\'s financial operations with a track record of transparent budgeting and responsible stewardship. As treasurer, he manages accounts, audits, and member fund allocations, ensuring fiscal discipline across all four chapters.'
+      },
+      {
+        id: 'B004', type: 'board', region: 'all', regionLabel: 'All Maharashtra',
+        name: 'Madhur M Giri', role: 'Legal Advisor',
+        location: 'Thane West, Maharashtra', org: 'RSWA Legal Cell', reg: 'MH/2018/004',
+        photo: 'https://picsum.photos/seed/rswa-madhur/400/500',
+        bio: '"The law is a shield for those who know it. My mission is to ensure every RSWA member is protected and informed."',
+        about: 'Madhur M Giri heads RSWA\'s Legal Advisory Cell, providing counsel on RERA compliance, dispute resolution, and member rights. A practicing advocate with specialisation in real estate law, he established the RERA guidance cell that has helped hundreds of members navigate regulatory requirements.'
+      },
+      {
+        id: 'B005', type: 'board', region: 'nalasopara', regionLabel: 'Nalasopara',
+        name: 'Rajesh Kumar', role: 'Vice President',
+        location: 'Nalasopara East, Vasai-Virar', org: 'RSWA Nalasopara Chapter', reg: 'MH/2019/005',
+        photo: 'https://picsum.photos/seed/rswa-rajesh/400/500',
+        bio: '"Nalasopara is one of the fastest growing corridors in the Mumbai metropolitan region. We are here to ensure every realtor thrives in this growth."',
+        about: 'Rajesh Kumar leads the Nalasopara chapter as Vice President, overseeing membership growth, local events, and policy representation for the northern corridor. He joined RSWA in 2019 and expanded the Nalasopara chapter from 20 to over 80 active members.'
+      },
+      {
+        id: 'B006', type: 'board', region: 'virar', regionLabel: 'Virar',
+        name: 'Vikram Singh', role: 'Director of Operations',
+        location: 'Virar East, Vasai-Virar', org: 'RSWA Virar Chapter', reg: 'MH/2019/006',
+        photo: 'https://picsum.photos/seed/rswa-vikram/400/500',
+        bio: '"Operational excellence means members never have to worry — we handle the administration so they can focus on their clients."',
+        about: 'Vikram Singh manages day-to-day operations across RSWA\'s chapters, coordinating between branches, managing vendor relationships, and overseeing event logistics. His systems-oriented approach has streamlined membership renewals and communication workflows across the entire association.'
+      }
+    ];
+
+    const committeeData = [
+      {
+        id: 'C001', type: 'committee', region: 'virar', regionLabel: 'Virar',
+        name: 'Priya Sharma', role: 'Virar Branch Coordinator',
+        location: 'Virar West', org: 'RSWA Virar Chapter', reg: 'MH/2020/007',
+        photo: 'https://picsum.photos/seed/rswa-priya/400/500',
+        bio: '"Connecting members, solving problems, building community — that is what branch coordination is all about."',
+        about: 'Priya Sharma coordinates day-to-day activities at the Virar branch including member onboarding, event organisation, and local outreach. She joined RSWA in 2020 and has been instrumental in growing membership and engagement in the Virar West corridor.'
+      },
+      {
+        id: 'C002', type: 'committee', region: 'vasai', regionLabel: 'Vasai',
+        name: 'Anand Desai', role: 'Vasai Branch Coordinator',
+        location: 'Vasai East, Palghar', org: 'RSWA Vasai Chapter', reg: 'MH/2020/008',
+        photo: 'https://picsum.photos/seed/rswa-anand/400/500',
+        bio: '"Vasai has enormous real estate potential. My role is to ensure every professional here has the support and platform they deserve."',
+        about: 'Anand Desai oversees branch operations in Vasai, organising training programs, member meet-ups, and welfare initiatives. His local industry knowledge and community ties have helped RSWA establish a strong foothold in the Vasai East market.'
+      },
+      {
+        id: 'C003', type: 'committee', region: 'nalasopara', regionLabel: 'Nalasopara',
+        name: 'Suresh Patil', role: 'Nalasopara Coordinator',
+        location: 'Nalasopara West', org: 'RSWA Nalasopara Chapter', reg: 'MH/2021/009',
+        photo: 'https://picsum.photos/seed/rswa-suresh/400/500',
+        bio: '"The northern corridor is the future. I am proud to be building RSWA\'s presence here, one member at a time."',
+        about: 'Suresh Patil manages member relations and branch activities in Nalasopara. Since joining in 2021, he has organised over 12 community events, a legal awareness seminar, and a first-time homebuyer outreach drive that brought significant positive attention to RSWA.'
+      },
+      {
+        id: 'C004', type: 'committee', region: 'virar', regionLabel: 'Virar',
+        name: 'Meena Joshi', role: 'Member Relations — Virar',
+        location: 'Virar West', org: 'RSWA Virar Chapter', reg: 'MH/2022/010',
+        photo: 'https://picsum.photos/seed/rswa-meena/400/500',
+        bio: '"Every member who walks through our door deserves to feel heard, valued, and supported. That is my personal promise."',
+        about: 'Meena Joshi handles member relations and welfare queries at the Virar branch. She is the first point of contact for new member enquiries, renewals, and grievances, and is widely regarded as one of the most approachable and effective committee members in the association.'
+      },
+      {
+        id: 'C005', type: 'committee', region: 'vasai', regionLabel: 'Vasai',
+        name: 'Anil Mehta', role: 'Senior Advisor — Vasai',
+        location: 'Vasai West, Palghar', org: 'RSWA Vasai Chapter', reg: 'MH/2021/011',
+        photo: 'https://picsum.photos/seed/rswa-anil/400/500',
+        bio: '"Experience is the greatest teacher. I am here to share what I have learned so the next generation of realtors can start ahead."',
+        about: 'Anil Mehta brings over 18 years of real estate experience to his advisory role in Vasai. He mentors junior members, chairs training workshops, and contributes to policy discussions at the state level on behalf of RSWA.'
+      },
+      {
+        id: 'C006', type: 'committee', region: 'nalasopara', regionLabel: 'Nalasopara',
+        name: 'Kavita Nair', role: 'Events Coordinator — Nalasopara',
+        location: 'Nalasopara East', org: 'RSWA Nalasopara Chapter', reg: 'MH/2022/012',
+        photo: 'https://picsum.photos/seed/rswa-kavita/400/500',
+        bio: '"Great events create great communities. Every gathering we host is an opportunity to strengthen the bond between our members."',
+        about: 'Kavita Nair plans and executes all events for the Nalasopara chapter — from annual meets and award ceremonies to training days and community welfare drives. Her organisational skills and attention to detail make every RSWA event a memorable experience.'
+      },
+      {
+        id: 'C007', type: 'committee', region: 'virar', regionLabel: 'Virar',
+        name: 'Ravi Sharma', role: 'Training Lead — Virar',
+        location: 'Virar East', org: 'RSWA Virar Chapter', reg: 'MH/2021/013',
+        photo: 'https://picsum.photos/seed/rswa-ravi/400/500',
+        bio: '"Knowledge is the most valuable tool a realtor can carry. I am committed to keeping our members the best-trained in the region."',
+        about: 'Ravi Sharma designs and delivers training programmes for RSWA members in Virar, covering RERA compliance, digital marketing, negotiation skills, and legal documentation. He has trained over 200 members since joining the committee in 2021.'
+      },
+      {
+        id: 'C008', type: 'committee', region: 'vasai', regionLabel: 'Vasai',
+        name: 'Deepa Patil', role: 'Finance Committee — Vasai',
+        location: 'Vasai West, Palghar', org: 'RSWA Vasai Chapter', reg: 'MH/2022/014',
+        photo: 'https://picsum.photos/seed/rswa-deepa/400/500',
+        bio: '"Responsible financial management at the branch level ensures every member sees the value of their membership investment."',
+        about: 'Deepa Patil assists with financial record-keeping, member fee collection, and budget planning for the Vasai chapter. She works closely with the Maharashtra Treasurer to ensure accurate reporting and transparent use of chapter funds.'
+      },
+      {
+        id: 'C009', type: 'committee', region: 'nalasopara', regionLabel: 'Nalasopara',
+        name: 'Mohan Gupta', role: 'Community Liaison — Nalasopara',
+        location: 'Nalasopara West', org: 'RSWA Nalasopara Chapter', reg: 'MH/2022/015',
+        photo: 'https://picsum.photos/seed/rswa-mohan/400/500',
+        bio: '"RSWA is more than an association — it is a family. My work is to strengthen that family in every neighbourhood we serve."',
+        about: 'Mohan Gupta manages community outreach for the Nalasopara chapter, building relationships with local builders, housing societies, and civic bodies. He represents RSWA at municipal meetings and has been instrumental in securing official recognition from the Vasai-Virar Municipal Corporation.'
+      },
+      {
+        id: 'C010', type: 'committee', region: 'virar', regionLabel: 'Virar',
+        name: 'Sunita Rao', role: 'Communications Head — Virar',
+        location: 'Virar West', org: 'RSWA Virar Chapter', reg: 'MH/2023/016',
+        photo: 'https://picsum.photos/seed/rswa-sunita/400/500',
+        bio: '"Clear, consistent communication builds trust. I make sure our members are always informed, always connected, always proud to be part of RSWA."',
+        about: 'Sunita Rao oversees all communications for the Virar chapter — including newsletters, social media, member circulars, and press releases. Her background in journalism and digital media has elevated RSWA\'s local brand presence significantly since she joined in 2023.'
+      }
+    ];
+
+    const allMembers = [...boardData, ...committeeData];
+
+    /* ─── Update hero stats ───────────────────────────────── */
+    document.getElementById('heroTotal').textContent     = allMembers.length;
+    document.getElementById('heroBoard').textContent     = boardData.length;
+    document.getElementById('heroCommittee').textContent = committeeData.length;
+
+    /* ─── State ───────────────────────────────────────────── */
+    let activeFilter = 'all';
+    let searchQuery  = '';
+
+    /* ─── Filter logic ────────────────────────────────────── */
+    function matchesMember(m) {
+      const q = searchQuery.toLowerCase();
+      const searchOk = !q ||
+        m.name.toLowerCase().includes(q) ||
+        m.role.toLowerCase().includes(q) ||
+        m.regionLabel.toLowerCase().includes(q) ||
+        m.location.toLowerCase().includes(q);
+
+      let filterOk = true;
+      if (activeFilter === 'board')       filterOk = m.type === 'board';
+      else if (activeFilter === 'committee') filterOk = m.type === 'committee';
+      else if (['vasai','virar','nalasopara'].includes(activeFilter))
+        filterOk = m.region === activeFilter || m.region === 'all';
+
+      return searchOk && filterOk;
+    }
+
+    /* ─── Card HTML ───────────────────────────────────────── */
+    function cardHTML(m) {
+      return `
+        <div class="bc-card fade-in" role="listitem" tabindex="0"
+             onclick="openBranchModal('${m.id}')"
+             onkeydown="if(event.key==='Enter')openBranchModal('${m.id}')">
+          <div class="bc-photo-wrap">
+            <img src="${m.photo}" alt="${m.name}" loading="lazy" />
+            <span class="bc-ribbon ${m.type}">${m.type === 'board' ? '★ BOARD' : '○ COMMITTEE'}</span>
+            ${m.region !== 'all' ? `<span class="bc-region-badge">${m.regionLabel}</span>` : ''}
+          </div>
+          <div class="bc-card-body">
+            <p class="bc-role ${m.type}">${m.role}</p>
+            <h3 class="bc-name">${m.name}</h3>
+            <p class="bc-location"><i class="fa-solid fa-location-dot"></i> ${m.location}</p>
+          </div>
+          <div class="bc-card-footer">
+            <span class="bc-type-tag ${m.type}">${m.type === 'board' ? 'Board Member' : 'Committee'}</span>
+            <button class="bc-profile-btn">View Profile <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>`;
+    }
+
+    /* ─── Render ──────────────────────────────────────────── */
+    function render() {
+      const filteredBoard     = boardData.filter(matchesMember);
+      const filteredCommittee = committeeData.filter(matchesMember);
+      const total = filteredBoard.length + filteredCommittee.length;
+
+      // Results counter
+      document.getElementById('branchResults').innerHTML =
+        `<strong>${total}</strong> of ${allMembers.length} members`;
+
+      // Board section
+      const boardGroup = document.getElementById('boardGroup');
+      const boardGrid  = document.getElementById('boardGrid');
+      if (filteredBoard.length === 0 && activeFilter === 'committee') {
+        boardGroup.style.display = 'none';
+      } else {
+        boardGroup.style.display = '';
+        boardGrid.innerHTML = filteredBoard.length
+          ? filteredBoard.map(cardHTML).join('')
+          : `<div class="branch-empty"><i class="fa-solid fa-user-slash"></i><p>No board members match your search.</p></div>`;
+        document.getElementById('boardCount').textContent = ` (${filteredBoard.length})`;
+      }
+
+      // Committee section
+      const committeeGroup = document.getElementById('committeeGroup');
+      const committeeGrid  = document.getElementById('committeeGrid');
+      if (filteredCommittee.length === 0 && activeFilter === 'board') {
+        committeeGroup.style.display = 'none';
+      } else {
+        committeeGroup.style.display = '';
+        committeeGrid.innerHTML = filteredCommittee.length
+          ? filteredCommittee.map(cardHTML).join('')
+          : `<div class="branch-empty"><i class="fa-solid fa-user-slash"></i><p>No committee members match your search.</p></div>`;
+        document.getElementById('committeeCount').textContent = ` (${filteredCommittee.length})`;
+      }
+
+      // Animate new cards
+      document.querySelectorAll('.bc-card.fade-in').forEach((el, i) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(18px)';
+        el.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+        setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, i * 40);
+      });
+    }
+
+    /* ─── Modal ───────────────────────────────────────────── */
+    function openBranchModal(id) {
+      const m = allMembers.find(x => x.id === id);
+      if (!m) return;
+
+      const hero = document.getElementById('bcModalHero');
+      hero.className = `bc-modal-hero ${m.type}`;
+
+      document.getElementById('bcModalBg').style.backgroundImage     = `url('${m.photo}')`;
+      document.getElementById('bcModalAvatar').src                   = m.photo;
+      document.getElementById('bcModalAvatar').alt                   = m.name;
+      document.getElementById('bcModalName').textContent             = m.name;
+      document.getElementById('bcModalRoleText').textContent         = m.role + ' · ' + m.regionLabel;
+
+      const ribbon = document.getElementById('bcModalRibbon');
+      ribbon.className    = `bc-modal-ribbon ${m.type}`;
+      ribbon.textContent  = m.type === 'board' ? '★ Board Committee' : '○ Committee Member';
+
+      const bio = document.getElementById('bcModalBio');
+      bio.textContent  = m.bio;
+      bio.className    = `bc-modal-bio ${m.type === 'committee' ? 'committee' : ''}`;
+
+      const panelClass = m.type;
+      document.getElementById('bcPanelTitle1').className = `bc-modal-panel-title ${panelClass}`;
+      document.getElementById('bcPanelTitle2').className = `bc-modal-panel-title ${panelClass}`;
+
+      document.getElementById('bcModalRole').textContent   = m.role;
+      document.getElementById('bcModalRegion').textContent = m.regionLabel;
+      document.getElementById('bcModalOrg').textContent    = m.org;
+      document.getElementById('bcModalReg').textContent    = m.reg;
+      document.getElementById('bcModalAbout').textContent  = m.about;
+
+      document.getElementById('bcModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBranchModal() {
+      document.getElementById('bcModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    /* ─── Event listeners ─────────────────────────────────── */
+    document.getElementById('branchSearch').addEventListener('input', e => {
+      searchQuery = e.target.value.trim();
+      render();
+    });
+
+    document.querySelectorAll('.branch-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.branch-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.dataset.filter;
+        render();
+      });
+    });
+
+    document.getElementById('bcModalClose').addEventListener('click', closeBranchModal);
+    document.getElementById('bcBackdrop').addEventListener('click', closeBranchModal);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBranchModal(); });
+
+    /* ─── Init ────────────────────────────────────────────── */
+    render();
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

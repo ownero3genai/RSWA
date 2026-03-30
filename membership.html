@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RSWA Member Directory — Browse our network of 500+ certified real estate professionals across Maharashtra." />
+  <title>Member Directory — RSWA | Realtors Social Welfare Association</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plh7eqjn08uE9EFT3YFSQiGv4BERg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ============================================================
+       MEMBERSHIP PAGE — Directory Styles
+       ============================================================ */
+
+    .dir-section {
+      background: #f0f2f5;
+      padding: 56px 0 72px;
+    }
+
+    /* ── Toolbar ─────────────────────────────────────────────── */
+    .dir-toolbar {
+      background: white;
+      border-radius: 14px;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      margin-bottom: 28px;
+    }
+
+    .dir-search-wrap {
+      position: relative;
+      flex: 1;
+      min-width: 220px;
+    }
+    .dir-search-wrap i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #aaa;
+      font-size: 14px;
+    }
+    .dir-search {
+      width: 100%;
+      padding: 10px 14px 10px 38px;
+      border: 1.5px solid #e5e5e5;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: #333;
+      outline: none;
+      transition: all 0.25s ease;
+      background: #f8f8f8;
+    }
+    .dir-search:focus {
+      border-color: var(--orange);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(232,119,34,0.1);
+    }
+
+    .dir-role-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .dir-role-tab {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 50px;
+      border: 1.5px solid #e0e0e0;
+      background: transparent;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .dir-role-tab:hover { border-color: var(--orange); color: var(--orange); }
+    .dir-role-tab.active {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: white;
+    }
+
+    .dir-toolbar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+    .dir-counter {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #888;
+      white-space: nowrap;
+    }
+    .dir-counter strong { color: var(--dark-text); font-weight: 600; }
+
+    .dir-view-btns {
+      display: flex;
+      gap: 4px;
+    }
+    .dir-view-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      border: 1.5px solid #e0e0e0;
+      background: transparent;
+      color: #aaa;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+    .dir-view-btn:hover { border-color: var(--orange); color: var(--orange); }
+    .dir-view-btn.active { background: var(--navy); border-color: var(--navy); color: white; }
+
+    /* ── Member Grid ────────────────────────────────────────── */
+    .dir-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .dir-grid.list-view {
+      grid-template-columns: 1fr;
+    }
+
+    /* ── Member Card ────────────────────────────────────────── */
+    .dir-card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+    }
+    .dir-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.13);
+    }
+
+    .dir-card-banner {
+      height: 88px;
+      background: linear-gradient(135deg, #1A1A2E 0%, #1e3a5f 50%, #1A1A2E 100%);
+      position: relative;
+      overflow: visible;
+    }
+    /* subtle diagonal pattern overlay */
+    .dir-card-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 8px,
+        rgba(255,255,255,0.03) 8px,
+        rgba(255,255,255,0.03) 9px
+      );
+    }
+    .dir-id-badge {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      background: var(--orange);
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 3px 8px;
+      border-radius: 50px;
+      z-index: 1;
+    }
+    .dir-reg-badge {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.8);
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      padding: 3px 8px;
+      border-radius: 50px;
+      z-index: 1;
+    }
+    .dir-avatar-wrap {
+      position: absolute;
+      bottom: -36px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 3px solid white;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+      background: #eee;
+      z-index: 2;
+    }
+    .dir-avatar-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .dir-card-body {
+      padding: 46px 18px 22px;
+      text-align: center;
+    }
+    .dir-role-pill {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 50px;
+      margin-bottom: 10px;
+    }
+    .dir-role-partner  { background: rgba(232,119,34,0.12); color: var(--orange); }
+    .dir-role-member   { background: rgba(26,26,46,0.1);   color: var(--navy);   }
+    .dir-role-office   { background: rgba(107,107,107,0.1); color: #555;          }
+
+    .dir-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark-text);
+      margin-bottom: 3px;
+    }
+    .dir-firm {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--orange);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .dir-info {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 16px;
+    }
+    .dir-info span {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #777;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .dir-info span i {
+      color: var(--orange);
+      font-size: 10px;
+      width: 12px;
+    }
+    .dir-btn {
+      width: 100%;
+      padding: 10px;
+      background: var(--navy);
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .dir-btn:hover {
+      background: var(--orange);
+      gap: 12px;
+    }
+
+    /* ── List View Card ─────────────────────────────────────── */
+    .dir-grid.list-view .dir-card {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      border-radius: 12px;
+    }
+    .dir-grid.list-view .dir-card:hover { transform: translateY(-2px); }
+    .dir-grid.list-view .dir-card-banner {
+      height: 100%;
+      border-radius: 12px 0 0 12px;
+      min-height: 90px;
+    }
+    .dir-grid.list-view .dir-avatar-wrap {
+      bottom: auto;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .dir-grid.list-view .dir-id-badge,
+    .dir-grid.list-view .dir-reg-badge { display: none; }
+    .dir-grid.list-view .dir-card-body {
+      padding: 14px 20px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .dir-grid.list-view .dir-role-pill { margin-bottom: 0; }
+    .dir-grid.list-view .dir-name { margin-bottom: 0; }
+    .dir-grid.list-view .dir-firm { margin-bottom: 0; }
+    .dir-grid.list-view .dir-info {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 0;
+      flex: 1;
+    }
+    .dir-grid.list-view .dir-btn {
+      width: auto;
+      padding: 9px 18px;
+      border-radius: 50px;
+      flex-shrink: 0;
+    }
+
+    /* ── Empty state ────────────────────────────────────────── */
+    .dir-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 80px 24px;
+      color: #aaa;
+    }
+    .dir-empty i { font-size: 48px; color: #ddd; display: block; margin-bottom: 16px; }
+    .dir-empty p { font-family: 'Inter', sans-serif; font-size: 15px; }
+
+    /* ── Member Stats bar ───────────────────────────────────── */
+    .dir-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .dir-stat {
+      background: white;
+      border-radius: 12px;
+      padding: 22px 20px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      border-top: 3px solid transparent;
+      transition: all 0.25s ease;
+    }
+    .dir-stat:nth-child(1) { border-top-color: var(--orange); }
+    .dir-stat:nth-child(2) { border-top-color: #2c7be5; }
+    .dir-stat:nth-child(3) { border-top-color: #28a745; }
+    .dir-stat-number {
+      font-family: 'Inter', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--dark-text);
+      line-height: 1;
+      display: block;
+    }
+    .dir-stat:nth-child(1) .dir-stat-number { color: var(--orange); }
+    .dir-stat:nth-child(2) .dir-stat-number { color: #2c7be5; }
+    .dir-stat:nth-child(3) .dir-stat-number { color: #28a745; }
+    .dir-stat-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #888;
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    /* ── Modal ──────────────────────────────────────────────── */
+    .member-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 4000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .member-modal.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(10,10,20,0.75);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    .modal-box {
+      position: relative;
+      width: 100%;
+      max-width: 680px;
+      max-height: 90vh;
+      background: white;
+      border-radius: 18px;
+      overflow-y: auto;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.35);
+      scrollbar-width: thin;
+    }
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.15);
+      border: none;
+      border-radius: 50%;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: background 0.2s ease;
+    }
+    .modal-close:hover { background: rgba(255,255,255,0.3); }
+
+    .modal-hero {
+      background: linear-gradient(135deg, #1A1A2E 0%, #1e3a5f 100%);
+      padding: 36px 32px 28px;
+      text-align: center;
+      position: relative;
+    }
+    .modal-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -45deg, transparent, transparent 10px,
+        rgba(255,255,255,0.025) 10px, rgba(255,255,255,0.025) 11px
+      );
+    }
+    .modal-avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,0.25);
+      object-fit: cover;
+      margin: 0 auto 16px;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+    .modal-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 6px;
+      position: relative;
+      z-index: 1;
+    }
+    .modal-firm-hero {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--orange);
+      font-weight: 600;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .modal-hero-badges {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+    .modal-badge-id {
+      background: var(--orange);
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+    .modal-badge-reg {
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.85);
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+    .modal-badge-role {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+    .modal-badge-role.partner { background: rgba(232,119,34,0.2); color: #ffaa55; }
+    .modal-badge-role.member  { background: rgba(100,160,255,0.2); color: #80b8ff; }
+    .modal-badge-role.office  { background: rgba(200,200,200,0.15); color: #ccc; }
+
+    .modal-body {
+      padding: 28px 32px 32px;
+    }
+    .modal-sections {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .modal-section {
+      background: #f8f9fb;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .modal-section.full { grid-column: 1 / -1; }
+    .modal-section-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--orange);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .modal-section-title i { font-size: 11px; }
+    .modal-field {
+      margin-bottom: 10px;
+    }
+    .modal-field:last-child { margin-bottom: 0; }
+    .modal-field-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 2px;
+    }
+    .modal-field-value {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--dark-text);
+    }
+    .modal-field-value a {
+      color: var(--orange);
+      text-decoration: none;
+    }
+    .modal-field-value a:hover { text-decoration: underline; }
+
+    .modal-status {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(40,167,69,0.06);
+      border: 1px solid rgba(40,167,69,0.2);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+    }
+    .modal-status-dot {
+      width: 10px;
+      height: 10px;
+      background: #28a745;
+      border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 3px rgba(40,167,69,0.2);
+      animation: pulse-green 2s infinite;
+    }
+    @keyframes pulse-green {
+      0%, 100% { box-shadow: 0 0 0 3px rgba(40,167,69,0.2); }
+      50%  { box-shadow: 0 0 0 6px rgba(40,167,69,0.08); }
+    }
+    .modal-status-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1a7a30;
+    }
+    .modal-status-validity {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #888;
+      margin-left: auto;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 12px;
+    }
+    .modal-btn-primary {
+      flex: 1;
+      padding: 12px;
+      background: var(--orange);
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .modal-btn-primary:hover { background: var(--orange-dark); transform: translateY(-1px); }
+    .modal-btn-secondary {
+      flex: 1;
+      padding: 12px;
+      background: transparent;
+      color: var(--dark-text);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .modal-btn-secondary:hover { border-color: var(--navy); color: var(--navy); }
+
+    /* ── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 1199px) { .dir-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 991px)  {
+      .dir-grid { grid-template-columns: repeat(2, 1fr); }
+      .dir-stats { grid-template-columns: repeat(3, 1fr); }
+      .dir-toolbar { flex-wrap: wrap; }
+    }
+    @media (max-width: 767px)  {
+      .dir-grid { grid-template-columns: repeat(2, 1fr); }
+      .dir-stats { grid-template-columns: repeat(3, 1fr); }
+      .modal-sections { grid-template-columns: 1fr; }
+      .modal-body { padding: 20px 20px 24px; }
+      .modal-hero { padding: 28px 20px 20px; }
+    }
+    @media (max-width: 480px)  {
+      .dir-grid { grid-template-columns: 1fr 1fr; }
+      .dir-stats { grid-template-columns: 1fr; }
+      .modal-actions { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <a href="tel:+918888898272"><i class="fa-solid fa-phone"></i> +91 88888 98272</a>
+        <a href="mailto:info@rswa.in"><i class="fa-solid fa-envelope"></i> info@rswa.in</a>
+      </div>
+      <div class="top-bar-center">
+        <span class="iso-badge"><i class="fa-solid fa-certificate"></i> Registered Maharashtra/2000/16/Thane</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <img src="asset/RSWA-logo.png" alt="RSWA Logo" class="nav-logo" onerror="this.style.display='none'" />
+      </a>
+      <div class="nav-links" role="list">
+        <a href="index.html" class="nav-link" role="listitem">Home</a>
+        <a href="about.html" class="nav-link" role="listitem">About</a>
+        <a href="membership.html" class="nav-link active" role="listitem">Members</a>
+        <a href="branch.html" class="nav-link" role="listitem">Branch</a>
+        <a href="media.html" class="nav-link" role="listitem">Gallery</a>
+        <a href="contact.html" class="nav-link" role="listitem">Contact</a>
+      </div>
+      <a href="contact.html" class="btn-join">JOIN NOW</a>
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE DRAWER -->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
+    <button class="drawer-close" id="drawerClose" aria-label="Close navigation menu">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="membership.html" class="active">Members</a>
+      <a href="branch.html">Branch</a>
+      <a href="media.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="contact.html" class="drawer-join">JOIN NOW</a>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="Member Directory hero">
+    <div class="container">
+      <p class="page-hero-label">Our Network</p>
+      <h1 class="page-hero-title">Member Directory</h1>
+      <div class="page-hero-divider"></div>
+      <p class="page-hero-subtitle">Browse our network of certified real estate professionals — channel partners, associates, and team members across Maharashtra.</p>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep"><i class="fa-solid fa-chevron-right"></i></span>
+        <span class="breadcrumb-current">Members</span>
+      </nav>
+    </div>
+  </section>
+
+  <main>
+    <section class="dir-section" aria-label="Member directory">
+      <div class="container">
+
+        <!-- Stats -->
+        <div class="dir-stats">
+          <div class="dir-stat fade-in">
+            <span class="dir-stat-number" id="statTotal">12</span>
+            <p class="dir-stat-label">Total Members</p>
+          </div>
+          <div class="dir-stat fade-in">
+            <span class="dir-stat-number" id="statPartners">5</span>
+            <p class="dir-stat-label">Channel Partners</p>
+          </div>
+          <div class="dir-stat fade-in">
+            <span class="dir-stat-number" id="statMembers">7</span>
+            <p class="dir-stat-label">Associates &amp; Staff</p>
+          </div>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="dir-toolbar">
+          <div class="dir-search-wrap">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              type="search"
+              id="dirSearch"
+              class="dir-search"
+              placeholder="Search by name, firm, or ID…"
+              aria-label="Search members"
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="dir-role-tabs" role="group" aria-label="Filter by role">
+            <button class="dir-role-tab active" data-role="all">All</button>
+            <button class="dir-role-tab" data-role="partner">Partners</button>
+            <button class="dir-role-tab" data-role="member">Members</button>
+            <button class="dir-role-tab" data-role="office">Office Asst.</button>
+          </div>
+
+          <div class="dir-toolbar-right">
+            <span class="dir-counter" id="dirCounter"><strong>12</strong> members</span>
+            <div class="dir-view-btns">
+              <button class="dir-view-btn active" id="btnGrid" aria-label="Grid view" title="Grid view">
+                <i class="fa-solid fa-grip"></i>
+              </button>
+              <button class="dir-view-btn" id="btnList" aria-label="List view" title="List view">
+                <i class="fa-solid fa-list"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="dir-grid" id="dirGrid" role="list" aria-label="Member cards"></div>
+
+      </div>
+    </section>
+
+    <!-- CTA STRIP -->
+    <div class="cta-strip" aria-label="Join RSWA">
+      <div class="container">
+        <div class="cta-left">
+          <h2>Not a Member Yet?</h2>
+          <p>Join India's most trusted Realtor Association and grow your career.</p>
+        </div>
+        <div class="cta-right">
+          <a href="contact.html" class="btn-cta-white">Apply for Membership</a>
+          <a href="tel:+918888898272" class="btn-cta-outline-white">
+            <i class="fa-solid fa-phone"></i> +91 88888 98272
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="asset/RSWA-logo.png" alt="RSWA Logo" style="height:64px;width:auto;object-fit:contain;margin-bottom:12px;" onerror="this.style.display='none'" />
+          <p>Empowering India's real estate professionals since 2010. A trusted network of realtors committed to ethical practice, professional growth, and community welfare across Maharashtra.</p>
+        </div>
+        <div>
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="membership.html">Members</a></li>
+            <li><a href="branch.html">Branch Offices</a></li>
+            <li><a href="media.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Contact Info</h3>
+          <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><span>+91 88888 98272</span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><span>info@rswa.in</span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>RSWA House, Mumbai,<br>Maharashtra, India</span></div>
+        </div>
+        <div>
+          <h3 class="footer-heading">Follow Us</h3>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+          <p class="newsletter-label">Newsletter</p>
+          <form class="newsletter-form" onsubmit="return false;">
+            <input type="email" class="newsletter-input" placeholder="Your email address" autocomplete="email" />
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 RSWA. All Rights Reserved.</p>
+        <div class="footer-bottom-right">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       MEMBER MODAL
+       ============================================================ -->
+  <div class="member-modal" id="memberModal" role="dialog" aria-modal="true" aria-label="Member profile">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-box">
+
+      <button class="modal-close" id="modalClose" aria-label="Close profile">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-hero">
+        <img class="modal-avatar" id="modalAvatar" src="" alt="Member photo" />
+        <h2 class="modal-name" id="modalName"></h2>
+        <p class="modal-firm-hero" id="modalFirmHero"></p>
+        <div class="modal-hero-badges">
+          <span class="modal-badge-id" id="modalBadgeId"></span>
+          <span class="modal-badge-reg" id="modalBadgeReg"></span>
+          <span class="modal-badge-role" id="modalBadgeRole"></span>
+        </div>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="modal-status">
+          <span class="modal-status-dot"></span>
+          <span class="modal-status-text">Active Member</span>
+          <span class="modal-status-validity">Valid till <strong id="modalValidity"></strong></span>
+        </div>
+
+        <div class="modal-sections">
+
+          <div class="modal-section">
+            <p class="modal-section-title"><i class="fa-solid fa-address-card"></i> Contact Info</p>
+            <div class="modal-field">
+              <p class="modal-field-label">Phone</p>
+              <p class="modal-field-value"><a id="modalPhone" href="#">—</a></p>
+            </div>
+            <div class="modal-field">
+              <p class="modal-field-label">Email</p>
+              <p class="modal-field-value"><a id="modalEmail" href="#">—</a></p>
+            </div>
+          </div>
+
+          <div class="modal-section">
+            <p class="modal-section-title"><i class="fa-solid fa-id-badge"></i> Membership Details</p>
+            <div class="modal-field">
+              <p class="modal-field-label">Member ID</p>
+              <p class="modal-field-value" id="modalMemberId">—</p>
+            </div>
+            <div class="modal-field">
+              <p class="modal-field-label">Role</p>
+              <p class="modal-field-value" id="modalRoleLabel">—</p>
+            </div>
+            <div class="modal-field">
+              <p class="modal-field-label">Member Since</p>
+              <p class="modal-field-value" id="modalJoined">—</p>
+            </div>
+          </div>
+
+          <div class="modal-section full">
+            <p class="modal-section-title"><i class="fa-solid fa-building"></i> Office Address</p>
+            <div class="modal-field">
+              <p class="modal-field-label">Firm Name</p>
+              <p class="modal-field-value" id="modalFirmName">—</p>
+            </div>
+            <div class="modal-field">
+              <p class="modal-field-label">Address</p>
+              <p class="modal-field-value" id="modalAddress">—</p>
+            </div>
+          </div>
+
+        </div><!-- /modal-sections -->
+
+        <div class="modal-actions">
+          <a class="modal-btn-primary" id="modalCallBtn" href="#">
+            <i class="fa-solid fa-phone"></i> Call Member
+          </a>
+          <a class="modal-btn-secondary" id="modalEmailBtn" href="#">
+            <i class="fa-solid fa-envelope"></i> Send Email
+          </a>
+        </div>
+
+      </div><!-- /modal-body -->
+    </div><!-- /modal-box -->
+  </div>
+
+  <!-- ============================================================
+       DATA + LOGIC
+       ============================================================ -->
+  <script>
+    const memberData = [
+      {
+        id: 'RSWA-001', reg: 'MH/2018/001',
+        name: 'Sanjay Padwal', firm: 'Padwal Properties',
+        role: 'partner', roleLabel: 'Partner',
+        phone: '+91 98765 43210', email: 'sanjay@padwalproperties.com',
+        validity: '31 Dec 2025', joined: 'Jan 2018',
+        address: 'Shop 12, Andheri West, Mumbai – 400 053',
+        photo: 'https://picsum.photos/seed/rswa-sanjay/300/300'
+      },
+      {
+        id: 'RSWA-002', reg: 'MH/2018/002',
+        name: 'Satish Chavan', firm: 'Chavan Real Estate',
+        role: 'partner', roleLabel: 'Partner',
+        phone: '+91 97654 32109', email: 'satish@chavanrealestate.com',
+        validity: '31 Dec 2025', joined: 'Feb 2018',
+        address: '2nd Floor, Borivali East, Mumbai – 400 066',
+        photo: 'https://picsum.photos/seed/rswa-satish/300/300'
+      },
+      {
+        id: 'RSWA-003', reg: 'MH/2018/003',
+        name: 'Chandrakant Gupta', firm: 'Gupta Realtors',
+        role: 'partner', roleLabel: 'Partner',
+        phone: '+91 96543 21098', email: 'ck@guptarealtors.in',
+        validity: '31 Dec 2025', joined: 'Mar 2018',
+        address: 'Office 5, Virar West, Vasai-Virar – 401 303',
+        photo: 'https://picsum.photos/seed/rswa-ck/300/300'
+      },
+      {
+        id: 'RSWA-004', reg: 'MH/2019/004',
+        name: 'Rajesh Kumar', firm: 'Kumar Associates',
+        role: 'partner', roleLabel: 'Partner',
+        phone: '+91 95432 10987', email: 'rajesh@kumarassociates.com',
+        validity: '31 Mar 2026', joined: 'Jun 2019',
+        address: 'Malad West, Mumbai – 400 064',
+        photo: 'https://picsum.photos/seed/rswa-rajesh/300/300'
+      },
+      {
+        id: 'RSWA-005', reg: 'MH/2019/005',
+        name: 'Vikram Singh', firm: 'Singh Properties',
+        role: 'partner', roleLabel: 'Partner',
+        phone: '+91 94321 09876', email: 'vikram@singhproperties.in',
+        validity: '31 Mar 2026', joined: 'Sep 2019',
+        address: 'Palghar Town, Dist. Palghar – 401 404',
+        photo: 'https://picsum.photos/seed/rswa-vikram/300/300'
+      },
+      {
+        id: 'RSWA-006', reg: 'MH/2018/006',
+        name: 'Madhur M Giri', firm: 'Giri Law Associates',
+        role: 'member', roleLabel: 'Member',
+        phone: '+91 93210 98765', email: 'madhur@girilaw.com',
+        validity: '31 Dec 2025', joined: 'Jan 2018',
+        address: 'Court Road, Thane West – 400 601',
+        photo: 'https://picsum.photos/seed/rswa-madhur/300/300'
+      },
+      {
+        id: 'RSWA-007', reg: 'MH/2020/007',
+        name: 'Priya Sharma', firm: 'Sharma Consultants',
+        role: 'member', roleLabel: 'Member',
+        phone: '+91 92109 87654', email: 'priya@sharmaconsultants.in',
+        validity: '30 Jun 2026', joined: 'Jan 2020',
+        address: 'Kandivali East, Mumbai – 400 101',
+        photo: 'https://picsum.photos/seed/rswa-priya/300/300'
+      },
+      {
+        id: 'RSWA-008', reg: 'MH/2020/008',
+        name: 'Anand Desai', firm: 'Desai Enterprises',
+        role: 'member', roleLabel: 'Member',
+        phone: '+91 91098 76543', email: 'anand@desaienterprises.com',
+        validity: '30 Jun 2026', joined: 'Apr 2020',
+        address: 'Nalasopara West, Vasai – 401 209',
+        photo: 'https://picsum.photos/seed/rswa-anand/300/300'
+      },
+      {
+        id: 'RSWA-009', reg: 'MH/2021/009',
+        name: 'Suresh Patil', firm: 'Patil Developers',
+        role: 'member', roleLabel: 'Member',
+        phone: '+91 90987 65432', email: 'suresh@patildevelopers.in',
+        validity: '31 Dec 2026', joined: 'Feb 2021',
+        address: 'Boisar MIDC, Dist. Palghar – 401 501',
+        photo: 'https://picsum.photos/seed/rswa-suresh/300/300'
+      },
+      {
+        id: 'RSWA-010', reg: 'MH/2021/010',
+        name: 'Anil Mehta', firm: 'Mehta & Sons Realty',
+        role: 'member', roleLabel: 'Member',
+        phone: '+91 89876 54321', email: 'anil@mehtarealty.in',
+        validity: '31 Dec 2026', joined: 'May 2021',
+        address: 'Dahisar East, Mumbai – 400 068',
+        photo: 'https://picsum.photos/seed/rswa-anil/300/300'
+      },
+      {
+        id: 'RSWA-011', reg: 'MH/2022/011',
+        name: 'Meena Joshi', firm: 'RSWA Head Office',
+        role: 'office', roleLabel: 'Office Asst.',
+        phone: '+91 88888 98272', email: 'info@rswa.in',
+        validity: '31 Mar 2026', joined: 'Jan 2022',
+        address: 'RSWA House, Andheri West, Mumbai – 400 053',
+        photo: 'https://picsum.photos/seed/rswa-meena/300/300'
+      },
+      {
+        id: 'RSWA-012', reg: 'MH/2022/012',
+        name: 'Kavita Nair', firm: 'RSWA Virar Branch',
+        role: 'office', roleLabel: 'Office Asst.',
+        phone: '+91 87765 43210', email: 'virar@rswa.in',
+        validity: '31 Mar 2026', joined: 'Apr 2022',
+        address: 'Virar West, Vasai–Virar – 401 303',
+        photo: 'https://picsum.photos/seed/rswa-kavita/300/300'
+      }
+    ];
+
+    // ── State ──────────────────────────────────────────────
+    let activeRole   = 'all';
+    let activeSearch = '';
+    let activeView   = 'grid';
+
+    // ── Filter ─────────────────────────────────────────────
+    function getFiltered() {
+      return memberData.filter(m => {
+        const roleOk = activeRole === 'all' || m.role === activeRole;
+        const q      = activeSearch.toLowerCase();
+        const searchOk = !q ||
+          m.name.toLowerCase().includes(q) ||
+          m.firm.toLowerCase().includes(q) ||
+          m.id.toLowerCase().includes(q);
+        return roleOk && searchOk;
+      });
+    }
+
+    // ── Render cards ───────────────────────────────────────
+    function renderCards() {
+      const filtered = getFiltered();
+      const grid     = document.getElementById('dirGrid');
+      const counter  = document.getElementById('dirCounter');
+
+      counter.innerHTML = `<strong>${filtered.length}</strong> of ${memberData.length} members`;
+
+      if (!filtered.length) {
+        grid.innerHTML = `
+          <div class="dir-empty">
+            <i class="fa-solid fa-user-slash"></i>
+            <p>No members found matching your search.</p>
+          </div>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(m => `
+        <div class="dir-card fade-in" role="listitem" tabindex="0"
+             onclick="openModal('${m.id}')"
+             onkeydown="if(event.key==='Enter')openModal('${m.id}')">
+          <div class="dir-card-banner">
+            <span class="dir-id-badge">${m.id}</span>
+            <span class="dir-reg-badge">${m.reg}</span>
+            <div class="dir-avatar-wrap">
+              <img src="${m.photo}" alt="${m.name}" loading="lazy" />
+            </div>
+          </div>
+          <div class="dir-card-body">
+            <span class="dir-role-pill dir-role-${m.role}">${m.roleLabel}</span>
+            <h3 class="dir-name">${m.name}</h3>
+            <p class="dir-firm">${m.firm}</p>
+            <div class="dir-info">
+              <span><i class="fa-solid fa-phone"></i>${m.phone}</span>
+              <span><i class="fa-solid fa-envelope"></i>${m.email}</span>
+              <span><i class="fa-solid fa-calendar-check"></i>Valid till ${m.validity}</span>
+            </div>
+            <button class="dir-btn">View Profile <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      `).join('');
+
+      // re-observe new fade-in elements
+      grid.querySelectorAll('.fade-in').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+        setTimeout(() => {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, 20);
+      });
+    }
+
+    // ── Modal ──────────────────────────────────────────────
+    function openModal(id) {
+      const m = memberData.find(x => x.id === id);
+      if (!m) return;
+
+      document.getElementById('modalAvatar').src       = m.photo;
+      document.getElementById('modalAvatar').alt       = m.name;
+      document.getElementById('modalName').textContent = m.name;
+      document.getElementById('modalFirmHero').textContent = m.firm;
+      document.getElementById('modalBadgeId').textContent  = m.id;
+      document.getElementById('modalBadgeReg').textContent = m.reg;
+
+      const roleEl = document.getElementById('modalBadgeRole');
+      roleEl.textContent  = m.roleLabel;
+      roleEl.className    = 'modal-badge-role ' + m.role;
+
+      document.getElementById('modalValidity').textContent  = m.validity;
+      document.getElementById('modalMemberId').textContent  = m.id;
+      document.getElementById('modalRoleLabel').textContent = m.roleLabel;
+      document.getElementById('modalJoined').textContent    = m.joined;
+      document.getElementById('modalFirmName').textContent  = m.firm;
+      document.getElementById('modalAddress').textContent   = m.address;
+
+      const phoneEl = document.getElementById('modalPhone');
+      phoneEl.textContent = m.phone;
+      phoneEl.href = 'tel:' + m.phone.replace(/\s/g, '');
+
+      const emailEl = document.getElementById('modalEmail');
+      emailEl.textContent = m.email;
+      emailEl.href = 'mailto:' + m.email;
+
+      document.getElementById('modalCallBtn').href  = 'tel:' + m.phone.replace(/\s/g, '');
+      document.getElementById('modalEmailBtn').href = 'mailto:' + m.email;
+
+      document.getElementById('memberModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('memberModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // ── Event listeners ────────────────────────────────────
+    document.getElementById('dirSearch').addEventListener('input', e => {
+      activeSearch = e.target.value.trim();
+      renderCards();
+    });
+
+    document.querySelectorAll('.dir-role-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.dir-role-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        activeRole = tab.dataset.role;
+        renderCards();
+      });
+    });
+
+    document.getElementById('btnGrid').addEventListener('click', () => {
+      activeView = 'grid';
+      document.getElementById('dirGrid').classList.remove('list-view');
+      document.getElementById('btnGrid').classList.add('active');
+      document.getElementById('btnList').classList.remove('active');
+    });
+
+    document.getElementById('btnList').addEventListener('click', () => {
+      activeView = 'list';
+      document.getElementById('dirGrid').classList.add('list-view');
+      document.getElementById('btnList').classList.add('active');
+      document.getElementById('btnGrid').classList.remove('active');
+    });
+
+    document.getElementById('modalClose').addEventListener('click', closeModal);
+    document.getElementById('modalBackdrop').addEventListener('click', closeModal);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    // ── Init ───────────────────────────────────────────────
+    renderCards();
+
+    // Update stat counters
+    const partners = memberData.filter(m => m.role === 'partner').length;
+    const others   = memberData.length - partners;
+    document.getElementById('statTotal').textContent    = memberData.length;
+    document.getElementById('statPartners').textContent = partners;
+    document.getElementById('statMembers').textContent  = others;
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
