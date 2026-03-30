@@ -1232,6 +1232,21 @@
     render();
   </script>
 
+  <!-- Floating Social Sidebar -->
+  <div class="social-sidebar">
+    <a href="#" class="social-sidebar-btn" aria-label="Facebook"  target="_blank" rel="noopener" style="--hover:#1877f2"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="#" class="social-sidebar-btn" aria-label="Instagram" target="_blank" rel="noopener" style="--hover:#e1306c"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" class="social-sidebar-btn" aria-label="YouTube"   target="_blank" rel="noopener" style="--hover:#ff0000"><i class="fa-brands fa-youtube"></i></a>
+    <a href="#" class="social-sidebar-btn" aria-label="LinkedIn"  target="_blank" rel="noopener" style="--hover:#0a66c2"><i class="fa-brands fa-linkedin-in"></i></a>
+  </div>
+  <style>
+    .social-sidebar{position:fixed;right:0;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;background:rgba(20,20,35,0.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:12px 0 0 12px;overflow:hidden;z-index:9999;box-shadow:-3px 0 20px rgba(0,0,0,0.35);}
+    .social-sidebar-btn{display:flex;align-items:center;justify-content:center;width:46px;height:46px;color:rgba(255,255,255,0.75);font-size:17px;text-decoration:none;transition:background 0.22s,color 0.22s,transform 0.22s;border-bottom:1px solid rgba(255,255,255,0.08);}
+    .social-sidebar-btn:last-child{border-bottom:none;}
+    .social-sidebar-btn:hover{background:var(--hover);color:#fff;transform:scale(1.12);}
+    @media(max-width:480px){.social-sidebar-btn{width:38px;height:38px;font-size:14px;}}
+  </style>
+
   <script src="js/main.js"></script>
 </body>
 </html>
